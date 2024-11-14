@@ -1,13 +1,13 @@
 {
-  "timestamp": "2024-11-13T03:00:35.255Z",
+  "timestamp": "2024-11-14T03:01:55.139Z",
   "version": "nightly",
   "sha256sums": {
-    "NoCloud-armv7": "14ce512bd4f2c184e7e3f4c4d232fd39641bafad00123046b47d7745f9e3fd93",
-    "NoCloud-armv7-lowmem": "0a51b7c92158bcc25cab65e0caafb4a08e6079decfbad38db8210c6fa3c1feb6",
-    "NoCloud-aarch64": "6c4408afc9e359e821676b1d10efc3b5ac087ebdcc872eab493edd6e3266b737",
-    "NoCloud-armv7.upx": "56bfd899d64a66c316740edf6e0b9dd014816d41e785ad6e28e05fd3a5f502e9",
-    "NoCloud-armv7-lowmem.upx": "71aba2ba944923974022afec71a75f29791117d56e724842f412aea6e216f29c",
-    "NoCloud-aarch64.upx": "01ca774d4a1ca84e6d0e577e458e0f71e09d0fad8196e75d9d57e35e2bbfd507"
+    "NoCloud-armv7": "be145acb6ecd78307a0fb0f8f0669b45fb84a6f61f53a2bf921f2e311c050580",
+    "NoCloud-armv7-lowmem": "f0899eed83ea467f6b4a404df71cd7a013fb952455d122c866979aaa087f30bd",
+    "NoCloud-aarch64": "719eba8023478432c4df4e41e6309e0dda811069fdd3333d84bfbfb6b5b7dba4",
+    "NoCloud-armv7.upx": "eb43bb17201d823c958e018faa8ed058dccbf0758c063394bfaf1c7666090170",
+    "NoCloud-armv7-lowmem.upx": "c7bed7bbbacb473f41eae3e49aff406fd85c7364d3940c13bfed22b414a77623",
+    "NoCloud-aarch64.upx": "373b3cf6d4adc71bd773b4e2e002837125e5e41e54804189ce37cef746179b8a"
   },
-  "changelog": "## NoCloud nightly (2024-11-13T03:00:35.034Z)\n"
+  "changelog": "## NoCloud nightly (2024-11-14T03:01:54.907Z)\n"
 }
