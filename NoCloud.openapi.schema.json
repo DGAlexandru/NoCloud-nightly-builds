@@ -473,7 +473,10 @@
                     "TotalStatisticsCapability",
                     "SpeakerVolumeControlCapability",
                     "KeyLockCapability",
-                    "ObstacleAvoidanceControlCapability"
+                    "ObstacleAvoidanceControlCapability",
+                    "PetObstacleAvoidanceControlCapability",
+                    "CarpetModeControlCapability",
+                    "CarpetSensorModeControlCapability"
                   ]
                 }
               }
@@ -790,7 +793,10 @@
                 "TotalStatisticsCapability",
                 "SpeakerVolumeControlCapability",
                 "KeyLockCapability",
-                "ObstacleAvoidanceControlCapability"
+                "ObstacleAvoidanceControlCapability",
+                "PetObstacleAvoidanceControlCapability",
+                "CarpetModeControlCapability",
+                "CarpetSensorModeControlCapability"
               ]
             }
           }
@@ -3973,7 +3979,10 @@
                           "TotalStatisticsCapability",
                           "SpeakerVolumeControlCapability",
                           "KeyLockCapability",
-                          "ObstacleAvoidanceControlCapability"
+                          "ObstacleAvoidanceControlCapability",
+                          "PetObstacleAvoidanceControlCapability",
+                          "CarpetModeControlCapability",
+                          "CarpetSensorModeControlCapability"
                         ]
                       }
                     }
@@ -4169,7 +4178,10 @@
                         "TotalStatisticsCapability",
                         "SpeakerVolumeControlCapability",
                         "KeyLockCapability",
-                        "ObstacleAvoidanceControlCapability"
+                        "ObstacleAvoidanceControlCapability",
+                        "PetObstacleAvoidanceControlCapability",
+                        "CarpetModeControlCapability",
+                        "CarpetSensorModeControlCapability"
                       ]
                     }
                   }
