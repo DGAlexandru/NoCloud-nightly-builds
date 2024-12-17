@@ -1,13 +1,13 @@
 {
-  "timestamp": "2024-12-16T03:16:45.468Z",
+  "timestamp": "2024-12-17T03:12:10.268Z",
   "version": "nightly",
   "sha256sums": {
-    "NoCloud-armv7": "08e3384db542ddd52c4c732843c5d71405f977127203916402556b9ad8d77984",
-    "NoCloud-armv7-lowmem": "e0a9f9c79f212852225047e0111d522254168c20bf5d37899d67fab203e6ee80",
-    "NoCloud-aarch64": "32beb0ff70e64a5effb0414dda9d0e429cc45f3b73fb7dbfa8bf115e600393be",
-    "NoCloud-armv7.upx": "bec0d18ca474edfacd4ddb4c2b9abf6f19acd6d57705b8d2a2d9fe82ff72720f",
-    "NoCloud-armv7-lowmem.upx": "088f339a9617038038358a78c19e5141cb025a7e137e46898bbf928150056998",
-    "NoCloud-aarch64.upx": "1ab575b679f2b081a11ffb7cd9a6237bfd8decffecc14fac1736a9381017dbbe"
+    "NoCloud-armv7": "56bc85c54c19978791b92ec6245d9edb16e26403ca6be52ae0bfb1c60ed5b22b",
+    "NoCloud-armv7-lowmem": "691b64f82e57f61f9d1be4bf13dcda4ed54a46b8691ffaf4fbc146e6d9e556da",
+    "NoCloud-aarch64": "58f982083886c247729c73f95b401eb9dea048b390ee196c207d3878ae440386",
+    "NoCloud-armv7.upx": "26113a2651c01bf879f15f90afb266193e995141148c3f4796d0e318c85a1980",
+    "NoCloud-armv7-lowmem.upx": "caf388de5ecadc9f957477ab67062be6311572dd35313db416617c0cb882e91f",
+    "NoCloud-aarch64.upx": "7ffe0c2cfcd760d2e694c05bf06e5c542556c8ef8d368787f591dffb0be6336f"
   },
-  "changelog": "## NoCloud nightly (2024-12-16T03:16:45.268Z)\n\n### Fixes\n\n- **ui**: Add missing word in welcomeDialog [`30addf0`](https://github.com/DGAlexandru/NoCloud/commit/30addf0ad0aa13f51f3c73f7f736c78cb8135a08)\n"
+  "changelog": "## NoCloud nightly (2024-12-17T03:12:10.071Z)\n\n### Fixes\n\n- **ui**: Add missing word in welcomeDialog [`30addf0`](https://github.com/DGAlexandru/NoCloud/commit/30addf0ad0aa13f51f3c73f7f736c78cb8135a08)\n"
 }
