@@ -429,16 +429,11 @@
                     "additionalProperties": false,
                     "required": [
                       "enabled",
-                      "addICBINVMapProperty",
                       "cleanAttributesOnShutdown"
                     ],
                     "properties": {
                       "enabled": {
                         "type": "boolean"
-                      },
-                      "addICBINVMapProperty": {
-                        "type": "boolean",
-                        "description": "If true, adds Homie definitions for ICBINV's PNG map topic as that's not possible to add in ICBINV itself."
                       },
                       "cleanAttributesOnShutdown": {
                         "type": "boolean"
@@ -749,16 +744,11 @@
                 "additionalProperties": false,
                 "required": [
                   "enabled",
-                  "addICBINVMapProperty",
                   "cleanAttributesOnShutdown"
                 ],
                 "properties": {
                   "enabled": {
                     "type": "boolean"
-                  },
-                  "addICBINVMapProperty": {
-                    "type": "boolean",
-                    "description": "If true, adds Homie definitions for ICBINV's PNG map topic as that's not possible to add in ICBINV itself."
                   },
                   "cleanAttributesOnShutdown": {
                     "type": "boolean"
@@ -3935,16 +3925,11 @@
                           "additionalProperties": false,
                           "required": [
                             "enabled",
-                            "addICBINVMapProperty",
                             "cleanAttributesOnShutdown"
                           ],
                           "properties": {
                             "enabled": {
                               "type": "boolean"
-                            },
-                            "addICBINVMapProperty": {
-                              "type": "boolean",
-                              "description": "If true, adds Homie definitions for ICBINV's PNG map topic as that's not possible to add in ICBINV itself."
                             },
                             "cleanAttributesOnShutdown": {
                               "type": "boolean"
@@ -4134,16 +4119,11 @@
                         "additionalProperties": false,
                         "required": [
                           "enabled",
-                          "addICBINVMapProperty",
                           "cleanAttributesOnShutdown"
                         ],
                         "properties": {
                           "enabled": {
                             "type": "boolean"
-                          },
-                          "addICBINVMapProperty": {
-                            "type": "boolean",
-                            "description": "If true, adds Homie definitions for ICBINV's PNG map topic as that's not possible to add in ICBINV itself."
                           },
                           "cleanAttributesOnShutdown": {
                             "type": "boolean"
@@ -8142,8 +8122,8 @@
                       {
                         "__class": "ConsumableStateAttribute",
                         "metaData": {},
-                        "type": "sensor",
-                        "subType": "all",
+                        "type": "cleaning",
+                        "subType": "sensor",
                         "remaining": {
                           "value": 123,
                           "unit": "minutes"
