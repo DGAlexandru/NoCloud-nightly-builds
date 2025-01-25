@@ -1,4 +1,4 @@
-## NoCloud nightly (2025-01-08T11:38:17.627Z)
+## NoCloud nightly (2025-01-25T16:23:34.410Z)
 ### Breaking Changes
 
 - **vendor.Dreame**: The mop consumable has been removed from Dreame X/L40 (and equivalent) firmware (master branch) [`4d70c71`](https://github.com/DGAlexandru/NoCloud/commit/4d70c71e4a86e51067f2b05e82efdc48acf7f53c)
@@ -6,6 +6,7 @@
 
 ### Features
 
+- **UI**: Simplify and merge paths to improve Map performance [`46b4c09`](https://github.com/DGAlexandru/NoCloud/commit/46b4c09ce2a7a070cb7422e1316e7c9da1165b31)
 - **vendor.Dreame**: Adding a new Quirk: Side Brush on Carpet (master branch) [`5f8fe48`](https://github.com/DGAlexandru/NoCloud/commit/5f8fe482ee9308d5e28e91a5200fab374bc346a3)
 - **vendor.Dreame**: Adding wheel consumable monitoring (master branch) [`50a2554`](https://github.com/DGAlexandru/NoCloud/commit/50a25545a639699a50b90fafa3cb7c54de2dc9a3)
 - **Core**: Adding wheel consumable subtype (master branch) [`0790d4c`](https://github.com/DGAlexandru/NoCloud/commit/0790d4c183d57846487e6e5f3ec65a983d253858)
@@ -18,9 +19,15 @@
 
 ### Fixes
 
+- **Updater**: Replace "master" branch tag with "main" to reflect NoCloud's GitHub structure [`5a87c49`](https://github.com/DGAlexandru/NoCloud/commit/5a87c49a48022b9149e6f2e8552c3d3925eceae1)
 - Missing newline at the end of file - Update MqttController.js [`c669daf`](https://github.com/DGAlexandru/NoCloud/commit/c669daf8320b63fcf431ebacfea01d3a68837e31)
 - **Code**: Bad indentation / alignment in "Add NullUpdateProvider for good measure" commit [`7daeb9e`](https://github.com/DGAlexandru/NoCloud/commit/7daeb9ebd73b0f7c679e5b29fd95e98b1ce17e8f)
 - Typo in "Move the sensor consumable type as a subtype of the new type cleaning" commit [`28f1bbb`](https://github.com/DGAlexandru/NoCloud/commit/28f1bbb941fa1fe094c947dde1f0395a29888f7f)
 - Typo in "Move the sensor consumable type as a subtype of the new type cleaning" commit [`847ddb4`](https://github.com/DGAlexandru/NoCloud/commit/847ddb42aa0fd227622f3ba2cdcf7d6af4a7efa8)
 - **vendor.Dreame**: Newer Dreame Robots may store obstacle images elsewhere (master branch) [`0fc8ad9`](https://github.com/DGAlexandru/NoCloud/commit/0fc8ad96d6a76f2802de3b8094b660969c15d780)
 - **MQTT**: Attempt to fix the reconfigure mutex never being left (main branch) [`74007f1`](https://github.com/DGAlexandru/NoCloud/commit/74007f13bec338c09e782f62de8762ec98fbb482)
+
+### Chores
+
+- **Release**: Version 2025.01.1 [`f7f1566`](https://github.com/DGAlexandru/NoCloud/commit/f7f15666645022167deaae90a80fa8f15ee473ec)
+- Update BUG issue template [`9228691`](https://github.com/DGAlexandru/NoCloud/commit/92286912099415ac32d4b960e60ebe9ca42e9262)
