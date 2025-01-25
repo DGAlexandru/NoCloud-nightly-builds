@@ -1,4 +1,4 @@
-## NoCloud nightly (2025-01-25T16:23:34.410Z)
+## NoCloud nightly (2025-01-25T17:10:30.197Z)
 ### Breaking Changes
 
 - **vendor.Dreame**: The mop consumable has been removed from Dreame X/L40 (and equivalent) firmware (master branch) [`4d70c71`](https://github.com/DGAlexandru/NoCloud/commit/4d70c71e4a86e51067f2b05e82efdc48acf7f53c)
@@ -19,6 +19,7 @@
 
 ### Fixes
 
+- **Updater**: Replace "master" branch tag with "main" to reflect NoCloud's GitHub structure v2 [`f337e8c`](https://github.com/DGAlexandru/NoCloud/commit/f337e8c246ede634da9cbcea77b3bb5a86e0b7b6)
 - **Updater**: Replace "master" branch tag with "main" to reflect NoCloud's GitHub structure [`5a87c49`](https://github.com/DGAlexandru/NoCloud/commit/5a87c49a48022b9149e6f2e8552c3d3925eceae1)
 - Missing newline at the end of file - Update MqttController.js [`c669daf`](https://github.com/DGAlexandru/NoCloud/commit/c669daf8320b63fcf431ebacfea01d3a68837e31)
 - **Code**: Bad indentation / alignment in "Add NullUpdateProvider for good measure" commit [`7daeb9e`](https://github.com/DGAlexandru/NoCloud/commit/7daeb9ebd73b0f7c679e5b29fd95e98b1ce17e8f)
