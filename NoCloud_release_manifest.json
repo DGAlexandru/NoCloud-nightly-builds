@@ -1,13 +1,13 @@
 {
-  "timestamp": "2025-02-04T02:58:07.926Z",
-  "version": "d0ccb30a4ed7d86d9a3320f456cdc69fdc3243fe",
+  "timestamp": "2025-02-23T16:16:22.998Z",
+  "version": "6effea648bdfd050b4e8ee2f18f7254282e81b26",
   "sha256sums": {
-    "NoCloud-armv7": "9c457e4023681b4e780b4ac019cee25a28b5436ef7b18578f3c17372e57a2be8",
-    "NoCloud-armv7-lowmem": "3988336ac5f531d3c04e70c50c261cc650b40e5949076916bb89beec17227ee2",
-    "NoCloud-aarch64": "878413da1b22bda7edc2f0677f6b48b93cd302b565b6c263c8a44f85f38e5306",
-    "NoCloud-armv7.upx": "4a3ca5fb1207111c603e92f7c163a185c4c75c3f5b929a50f7699c001b77cb78",
-    "NoCloud-armv7-lowmem.upx": "66d1f10ea8617909c3ce72f807d11cd2b401f37e5e19b03eb5436ccadd323e41",
-    "NoCloud-aarch64.upx": "93ad737fe8a953aaa8e2e8215cbf661fc1581bd55c9ee13e00f0a1de08ce5c46"
+    "NoCloud-armv7": "150994c78738605353d7e19ed308651577671aac420786c959917113f075403e",
+    "NoCloud-armv7-lowmem": "69ebaf195cc1f89239f54afce1a4b6aa013e6178219f75482a0a6fd45e0b7f5f",
+    "NoCloud-aarch64": "a96aadab4552a60778a3893bc7d81a6e0155393eb163874e116e36e97a73f877",
+    "NoCloud-armv7.upx": "5c74b07e4271eae115a0e57bbafb4e84cb44937ec4f4769497bf8bf3cf726bd4",
+    "NoCloud-armv7-lowmem.upx": "4b142f8f2198548f9ef7e528c17a1cefc20807d0c5b1ea88c7976e9879d325e8",
+    "NoCloud-aarch64.upx": "d14d03128301b718b4ef9cfee677ab01246a5cc2fec66194ec0f75ea19391f54"
   },
-  "changelog": "## NoCloud nightly (2025-02-04T02:58:07.740Z)\n\n### Fixes\n\n- **vendor.Dreame**: Fix Dreame Mova P10Pro Ultra device detection [`d0ccb30`](https://github.com/DGAlexandru/NoCloud/commit/d0ccb30a4ed7d86d9a3320f456cdc69fdc3243fe)\n"
+  "changelog": "## NoCloud nightly (2025-02-23T16:16:22.800Z)\n\n### Features\n\n- **UI**: Display dock state as text and Grid to Grid2 migration [`f169a50`](https://github.com/DGAlexandru/NoCloud/commit/f169a50ad50ebdeb4fa1fe803b45a2386db1cdc0)\n\n### Fixes\n\n- Gracefully handle iw process not spawning [`81143ac`](https://github.com/DGAlexandru/NoCloud/commit/81143ac1108e67732ebe9cecca13950fad74fdaa)\n- **vendor.Dreame**: Fix Dreame Mova P10Pro Ultra device detection [`d0ccb30`](https://github.com/DGAlexandru/NoCloud/commit/d0ccb30a4ed7d86d9a3320f456cdc69fdc3243fe)\n\n### Refactoring\n\n- **UI**: Finishing transition from @mui Grid to Grid2 [`46c470c`](https://github.com/DGAlexandru/NoCloud/commit/46c470cde6e71a9eef10e56ca4720ddb35d0ee78)\n"
 }
