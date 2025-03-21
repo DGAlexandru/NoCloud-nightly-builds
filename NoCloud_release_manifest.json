@@ -1,13 +1,13 @@
 {
-  "timestamp": "2025-02-23T16:16:22.998Z",
-  "version": "6effea648bdfd050b4e8ee2f18f7254282e81b26",
+  "timestamp": "2025-03-21T08:07:06.241Z",
+  "version": "b95b3595f3c12fe3a78350f7fc2a0cdbe5fa8d87",
   "sha256sums": {
-    "NoCloud-armv7": "150994c78738605353d7e19ed308651577671aac420786c959917113f075403e",
-    "NoCloud-armv7-lowmem": "69ebaf195cc1f89239f54afce1a4b6aa013e6178219f75482a0a6fd45e0b7f5f",
-    "NoCloud-aarch64": "a96aadab4552a60778a3893bc7d81a6e0155393eb163874e116e36e97a73f877",
-    "NoCloud-armv7.upx": "5c74b07e4271eae115a0e57bbafb4e84cb44937ec4f4769497bf8bf3cf726bd4",
-    "NoCloud-armv7-lowmem.upx": "4b142f8f2198548f9ef7e528c17a1cefc20807d0c5b1ea88c7976e9879d325e8",
-    "NoCloud-aarch64.upx": "d14d03128301b718b4ef9cfee677ab01246a5cc2fec66194ec0f75ea19391f54"
+    "NoCloud-armv7": "a2e17d6bb6f760aaef99b2f71129911535fc14c26c422b69a7969dee125e36ec",
+    "NoCloud-armv7-lowmem": "58e2672673feba6c043fb59a71d7a9921d742e910b94b4d706a3fdba3b462162",
+    "NoCloud-aarch64": "452bd2cea67e27cee35f42c3df407fe54800ed2d03de33fd6f3679660bf7da6c",
+    "NoCloud-armv7.upx": "97fc97042e9cba71e9cee2e9671ff8c9c972aadad5da6789bad87ab74cca25cd",
+    "NoCloud-armv7-lowmem.upx": "b5001904e096fc98e218ef5f6bbb8ebd9026d8dfa031ad467a2508401de669e9",
+    "NoCloud-aarch64.upx": "eeac2bb3d02274ba134e2ffd6135d621084ac3d6ff09803284bc84cc1f915316"
   },
-  "changelog": "## NoCloud nightly (2025-02-23T16:16:22.800Z)\n\n### Features\n\n- **UI**: Display dock state as text and Grid to Grid2 migration [`f169a50`](https://github.com/DGAlexandru/NoCloud/commit/f169a50ad50ebdeb4fa1fe803b45a2386db1cdc0)\n\n### Fixes\n\n- Gracefully handle iw process not spawning [`81143ac`](https://github.com/DGAlexandru/NoCloud/commit/81143ac1108e67732ebe9cecca13950fad74fdaa)\n- **vendor.Dreame**: Fix Dreame Mova P10Pro Ultra device detection [`d0ccb30`](https://github.com/DGAlexandru/NoCloud/commit/d0ccb30a4ed7d86d9a3320f456cdc69fdc3243fe)\n\n### Refactoring\n\n- **UI**: Finishing transition from @mui Grid to Grid2 [`46c470c`](https://github.com/DGAlexandru/NoCloud/commit/46c470cde6e71a9eef10e56ca4720ddb35d0ee78)\n"
+  "changelog": "## NoCloud nightly (2025-03-21T08:07:06.051Z)\n\n### Features\n\n- **UI**: Display dock state as text and Grid to Grid2 migration [`f169a50`](https://github.com/DGAlexandru/NoCloud/commit/f169a50ad50ebdeb4fa1fe803b45a2386db1cdc0)\n\n### Fixes\n\n- **UI**: Fixing the \"Fix for view broken by transition from @mui Grid to Grid2 for timers\" commit :~ [`b95b359`](https://github.com/DGAlexandru/NoCloud/commit/b95b3595f3c12fe3a78350f7fc2a0cdbe5fa8d87)\n- **UI**: Better handle Touches & Gestures [`f9019b3`](https://github.com/DGAlexandru/NoCloud/commit/f9019b375dde24e2dbffe86614726ce3b32c1bc3)\n- **UI**: Fix view broken by transition from @mui Grid to Grid2 for timers [`d8b9e3c`](https://github.com/DGAlexandru/NoCloud/commit/d8b9e3c3e07d4086aff4ca33db4178823021b07d)\n- **vendor.Dreame**: Mova S20 US model detection. [`b74bb9f`](https://github.com/DGAlexandru/NoCloud/commit/b74bb9f0c1d73972cc8a3ab2650897132783d932)\n- Gracefully handle iw process not spawning [`81143ac`](https://github.com/DGAlexandru/NoCloud/commit/81143ac1108e67732ebe9cecca13950fad74fdaa)\n- **vendor.Dreame**: Fix Dreame Mova P10Pro Ultra device detection [`d0ccb30`](https://github.com/DGAlexandru/NoCloud/commit/d0ccb30a4ed7d86d9a3320f456cdc69fdc3243fe)\n\n### Refactoring\n\n- **UI**: Use math formulas instead of intervals for map label sizes. [`391ea0b`](https://github.com/DGAlexandru/NoCloud/commit/391ea0b79f21154273eff19a6a0df612cdc46f2e)\n- **UI**: Finishing transition from @mui Grid to Grid2 [`46c470c`](https://github.com/DGAlexandru/NoCloud/commit/46c470cde6e71a9eef10e56ca4720ddb35d0ee78)\n"
 }
