@@ -1,7 +1,8 @@
-## NoCloud nightly (2025-04-10T23:35:40.759Z)
+## NoCloud nightly (2025-04-18T20:32:40.660Z)
 
 ### Features
 
+- **vendor.Dreame**: Add another variant for Dreame L20 Ultra: R2390 (OEM internal name) [`9fa1935`](https://github.com/DGAlexandru/NoCloud/commit/9fa1935520606991659da22700bdda6ee217f050)
 - **vendor.Dreame**: Add support for Dreame L20 Ultra R2394 (MR813 SoC) [`54ed3c9`](https://github.com/DGAlexandru/NoCloud/commit/54ed3c9abe3a366425d83d2168c6d5b32a8c30b5)
 - **UI**: Display dock state as text and Grid to Grid2 migration [`f169a50`](https://github.com/DGAlexandru/NoCloud/commit/f169a50ad50ebdeb4fa1fe803b45a2386db1cdc0)
 
