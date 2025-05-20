@@ -1,4 +1,4 @@
-## NoCloud nightly (2025-05-11T21:43:48.475Z)
+## NoCloud nightly (2025-05-20T20:31:19.704Z)
 
 ### Features
 
@@ -25,6 +25,7 @@
 
 ### Refactoring
 
+- **vendor.Dreame**: Quirk Factory plus X40 Ultra, L20 Ultra and L10s Pro Ultra rework [`146367e`](https://github.com/DGAlexandru/NoCloud/commit/146367e88fe999cbb3ec929fb1adc3191e64dcc8)
 - **vendor.Dreame**: Sorting the config of X40 and L20 Ultra; adding Dreame "Full" model; Refigure L20 Ultra capabilities [`3ca7ca5`](https://github.com/DGAlexandru/NoCloud/commit/3ca7ca5e067775dfafe7e8962ed5ff45ab8495de)
 - **UI**: Use math formulas instead of intervals for map label sizes. [`391ea0b`](https://github.com/DGAlexandru/NoCloud/commit/391ea0b79f21154273eff19a6a0df612cdc46f2e)
 - **UI**: Finishing transition from @mui Grid to Grid2 [`46c470c`](https://github.com/DGAlexandru/NoCloud/commit/46c470cde6e71a9eef10e56ca4720ddb35d0ee78)
