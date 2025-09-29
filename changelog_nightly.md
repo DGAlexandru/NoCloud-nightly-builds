@@ -1,4 +1,4 @@
-## NoCloud nightly (2025-09-28T03:21:10.210Z)
+## NoCloud nightly (2025-09-29T20:03:57.036Z)
 
 ### Fixes
 
@@ -14,4 +14,6 @@
 
 ### Chores
 
+- **Build**: Cleanup of NodeJS v20 [`732b743`](https://github.com/DGAlexandru/NoCloud/commit/732b7430bf8d86c79d7e3d56090788d318868264)
+- **Build**: Upgrade (officially) to NodeJS v22 [`175b311`](https://github.com/DGAlexandru/NoCloud/commit/175b311b4bc20ca2dec4a7fea6cdaf65cca64503)
 - New GitHub Workflow to "manually" allow package JSON files to be updated for new NodeJs packages. [`0c9262c`](https://github.com/DGAlexandru/NoCloud/commit/0c9262ce77ff33ca73563bc82ee4828b732407d8)
