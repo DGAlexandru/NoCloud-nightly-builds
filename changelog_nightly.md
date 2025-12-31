@@ -1,7 +1,13 @@
-## NoCloud nightly (2025-12-31T04:14:23.753Z)
+## NoCloud nightly (2025-12-31T17:44:43.490Z)
+### Breaking Changes
+
+- **Vendor.NoCloud**: Renaming MockRobot to MockNoCloudRobot [`46ebee0`](https://github.com/DGAlexandru/NoCloud/commit/46ebee005f7721491f687b3a763b84c64786b03a)
+- Merge AutoEmptyDockAutoEmptyControlCapability into AutoEmptyDockAutoEmptyIntervalControlCapability [`74b0b3b`](https://github.com/DGAlexandru/NoCloud/commit/74b0b3b267c3f798b01a588a83aa8f00cfb384e1)
 
 ### Features
 
+- **Vendor.Dreame**: MopDockMopWashTemperatureControlCapability [`1d1dbf9`](https://github.com/DGAlexandru/NoCloud/commit/1d1dbf9161f7c35b540ec0053778c2a3383239c5)
+- **Core**: MopDockMopWashTemperatureControlCapability [`085e694`](https://github.com/DGAlexandru/NoCloud/commit/085e6947930a2c4d7f2067ab5993762b25867688)
 - **UI**: Adding some custom obstacle icons [`848f0f9`](https://github.com/DGAlexandru/NoCloud/commit/848f0f927b544749838d3446e544861f5c7b08cf)
 - **NTPClient**: Use busybox2 when available [`20f317f`](https://github.com/DGAlexandru/NoCloud/commit/20f317f28d8940148fa0a6b77766ef98a3ac9502)
 - **Core**: Create a dedicated CameraLightControlCapability [`b4d921f`](https://github.com/DGAlexandru/NoCloud/commit/b4d921fdc6575dfe4453b7b58febdd3494338f2b)
@@ -11,6 +17,8 @@
 
 ### Fixes
 
+- **Vendor.RoboRock**: Code migration incomplete from the forked repository [`1e1bab4`](https://github.com/DGAlexandru/NoCloud/commit/1e1bab4323b12057a643c3a8f6c298088587921e)
+- **UI**: Migration of MopDockMopWashTemperatureControl to dockListItems [`1547a58`](https://github.com/DGAlexandru/NoCloud/commit/1547a58efe5ccebaa0ba5ed61c27ba1b0f16f061)
 - **Miio**: Fix a rare BUG that was crashing the miio process [`c77dc43`](https://github.com/DGAlexandru/NoCloud/commit/c77dc43a97e81607fc4321cf28060f4377c5bd21)
 - **Vendor.Dreame**: Minor change for newer firmwares [`0e2dbbb`](https://github.com/DGAlexandru/NoCloud/commit/0e2dbbbafcbfa3c6d3518eb92ada48d274e8a1f5)
 - **Vendor.Dreame**: Add another new model ID for L10SProUltraHeat [`563f969`](https://github.com/DGAlexandru/NoCloud/commit/563f9699fdee575ff93dd1cb147e13dd2ff55fc7)
@@ -38,6 +46,8 @@
 
 ### Chores
 
+- **BuildTools**: Migrating NightlyBuilds from "master" branch to "main" branch, to be in sync with GitHub recommendations [`4d334a3`](https://github.com/DGAlexandru/NoCloud/commit/4d334a3da0230c8146b7d1ffaa5ce405d681d40e)
+- **BuildTools**: False positive indentation problem - commented code [`ae86a13`](https://github.com/DGAlexandru/NoCloud/commit/ae86a136712acd5f5d58012fce881f91971d2f7b)
 - **BuildTools**: False positive indentation problem - commented code [`b9948fe`](https://github.com/DGAlexandru/NoCloud/commit/b9948fe8b5da8d80ca4642a745926acfb3a6bf47)
 - **BuildTools**: GitHub fix - Code Lint - indentations [`1dbc48d`](https://github.com/DGAlexandru/NoCloud/commit/1dbc48d215815bee7a511f4145ee1df4743c0ff6)
 - **Assets**: Improved icon for "Robot with extensions" [`a62adf6`](https://github.com/DGAlexandru/NoCloud/commit/a62adf68686030bddcd9d0da3d6843b720757360)
