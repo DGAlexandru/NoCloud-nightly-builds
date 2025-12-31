@@ -1,7 +1,9 @@
-## NoCloud nightly (2025-10-22T03:25:35.205Z)
+## NoCloud nightly (2025-12-31T04:14:23.753Z)
 
 ### Features
 
+- **UI**: Adding some custom obstacle icons [`848f0f9`](https://github.com/DGAlexandru/NoCloud/commit/848f0f927b544749838d3446e544861f5c7b08cf)
+- **NTPClient**: Use busybox2 when available [`20f317f`](https://github.com/DGAlexandru/NoCloud/commit/20f317f28d8940148fa0a6b77766ef98a3ac9502)
 - **Core**: Create a dedicated CameraLightControlCapability [`b4d921f`](https://github.com/DGAlexandru/NoCloud/commit/b4d921fdc6575dfe4453b7b58febdd3494338f2b)
 - **Vendor.Dreame**: Migrate code to use the dedicated CameraLightControlCapability [`ae1034e`](https://github.com/DGAlexandru/NoCloud/commit/ae1034e661bd5c710f84c231e344f174c62f8ed0)
 - **Vendor.Dreame**: Migrate code to use the dedicated MopExtensionControlCapability [`17f56df`](https://github.com/DGAlexandru/NoCloud/commit/17f56df2393cb2f50b4dd3e5de8b6736f87f7b6e)
