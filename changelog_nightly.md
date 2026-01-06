@@ -1,4 +1,4 @@
-## NoCloud nightly (2025-12-31T17:44:43.490Z)
+## NoCloud nightly (2026-01-06T12:03:03.543Z)
 ### Breaking Changes
 
 - **Vendor.NoCloud**: Renaming MockRobot to MockNoCloudRobot [`46ebee0`](https://github.com/DGAlexandru/NoCloud/commit/46ebee005f7721491f687b3a763b84c64786b03a)
@@ -6,6 +6,9 @@
 
 ### Features
 
+- **Vendor.Dreame**: Migrating from Quirks to Capability: MopGapControl (LacuneMopScalable) and MopTwistFrequency (MeticulousTwist) [`7141fc1`](https://github.com/DGAlexandru/NoCloud/commit/7141fc1022145a5145892d02658c51cad7d3e9c0)
+- **Core**: Migrating "Twist Robot for better Mopping" from Quirks to Capability [`9317b37`](https://github.com/DGAlexandru/NoCloud/commit/9317b377af1a49a5ef5eadeefc5e1dc8406ab60c)
+- **Core**: Adding the option to just cross the Carpet (besides not tacking any action or avoiding it / lifting or detaching the mop pads) [`7b0c48f`](https://github.com/DGAlexandru/NoCloud/commit/7b0c48f687d8ad3ec5813b3933d437315dd13a9d)
 - **Vendor.Dreame**: MopDockMopWashTemperatureControlCapability [`1d1dbf9`](https://github.com/DGAlexandru/NoCloud/commit/1d1dbf9161f7c35b540ec0053778c2a3383239c5)
 - **Core**: MopDockMopWashTemperatureControlCapability [`085e694`](https://github.com/DGAlexandru/NoCloud/commit/085e6947930a2c4d7f2067ab5993762b25867688)
 - **UI**: Adding some custom obstacle icons [`848f0f9`](https://github.com/DGAlexandru/NoCloud/commit/848f0f927b544749838d3446e544861f5c7b08cf)
@@ -46,6 +49,7 @@
 
 ### Chores
 
+- **BuildTools**: Fixing ESLint warnings - groups not sorted, mainly [`063f9e1`](https://github.com/DGAlexandru/NoCloud/commit/063f9e18c6eedc1edaafd97b7f8734e186884cc4)
 - **BuildTools**: Migrating NightlyBuilds from "master" branch to "main" branch, to be in sync with GitHub recommendations [`4d334a3`](https://github.com/DGAlexandru/NoCloud/commit/4d334a3da0230c8146b7d1ffaa5ce405d681d40e)
 - **BuildTools**: False positive indentation problem - commented code [`ae86a13`](https://github.com/DGAlexandru/NoCloud/commit/ae86a136712acd5f5d58012fce881f91971d2f7b)
 - **BuildTools**: False positive indentation problem - commented code [`b9948fe`](https://github.com/DGAlexandru/NoCloud/commit/b9948fe8b5da8d80ca4642a745926acfb3a6bf47)
