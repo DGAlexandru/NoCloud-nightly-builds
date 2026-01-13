@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-06T12:03:03.543Z)
+## NoCloud nightly (2026-01-13T22:06:49.028Z)
 ### Breaking Changes
 
 - **Vendor.NoCloud**: Renaming MockRobot to MockNoCloudRobot [`46ebee0`](https://github.com/DGAlexandru/NoCloud/commit/46ebee005f7721491f687b3a763b84c64786b03a)
@@ -6,6 +6,9 @@
 
 ### Features
 
+- **UI**: Adding Push Notifications Connectivity page - configure settings, run tests [`28946ee`](https://github.com/DGAlexandru/NoCloud/commit/28946ee703a0a6d96109be6d06ff8a7091ea62c7)
+- **Core**: Adding the option to forward robot's events (notifications) to an external app [`4c5def6`](https://github.com/DGAlexandru/NoCloud/commit/4c5def60d089fee0f6f8cc1b7d718dd415943c88)
+- **Core**: Adding the option to send custom / manual MIoT commands. Can be found on Log page. BackEnd done only for Dreame robots. [`263d281`](https://github.com/DGAlexandru/NoCloud/commit/263d2816bbfc68a00efd69553c9d23452cb27fb5)
 - **Vendor.Dreame**: Migrating from Quirks to Capability: MopGapControl (LacuneMopScalable) and MopTwistFrequency (MeticulousTwist) [`7141fc1`](https://github.com/DGAlexandru/NoCloud/commit/7141fc1022145a5145892d02658c51cad7d3e9c0)
 - **Core**: Migrating "Twist Robot for better Mopping" from Quirks to Capability [`9317b37`](https://github.com/DGAlexandru/NoCloud/commit/9317b377af1a49a5ef5eadeefc5e1dc8406ab60c)
 - **Core**: Adding the option to just cross the Carpet (besides not tacking any action or avoiding it / lifting or detaching the mop pads) [`7b0c48f`](https://github.com/DGAlexandru/NoCloud/commit/7b0c48f687d8ad3ec5813b3933d437315dd13a9d)
@@ -20,6 +23,8 @@
 
 ### Fixes
 
+- **Core**: Fixing a GitHub Desktop BUG that didn't see filename changes from upper to lower and vice versa - step2 [`39aa3ab`](https://github.com/DGAlexandru/NoCloud/commit/39aa3ab17e9891521156834e8bf209bb137c56c2)
+- **Core**: Fixing a GitHub Desktop BUG that didn't see filename changes from upper to lower and vice versa - step1 [`dfab044`](https://github.com/DGAlexandru/NoCloud/commit/dfab044588957566945253035d8a09263d1a7f75)
 - **Vendor.RoboRock**: Code migration incomplete from the forked repository [`1e1bab4`](https://github.com/DGAlexandru/NoCloud/commit/1e1bab4323b12057a643c3a8f6c298088587921e)
 - **UI**: Migration of MopDockMopWashTemperatureControl to dockListItems [`1547a58`](https://github.com/DGAlexandru/NoCloud/commit/1547a58efe5ccebaa0ba5ed61c27ba1b0f16f061)
 - **Miio**: Fix a rare BUG that was crashing the miio process [`c77dc43`](https://github.com/DGAlexandru/NoCloud/commit/c77dc43a97e81607fc4321cf28060f4377c5bd21)

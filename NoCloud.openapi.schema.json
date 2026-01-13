@@ -34,6 +34,10 @@
       "description": "NTP Client API"
     },
     {
+      "name": "PushNotif",
+      "description": "Push Notifications Client API"
+    },
+    {
       "name": "Timers",
       "description": "Timers API"
     },
@@ -477,6 +481,74 @@
               }
             }
           },
+          "pushNotifClient": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "enabled",
+              "server",
+              "path",
+              "port",
+              "token",
+              "user",
+              "sound",
+              "priority",
+              "rateLimit",
+              "rateLimitTime",
+              "pushEvents",
+              "processEvents"
+            ],
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Controls the status of NoCloud Push Notifications Connectivity"
+              },
+              "server": {
+                "type": "string",
+                "description": "Can be either an IP or a FQDN"
+              },
+              "path": {
+                "type": "string",
+                "description": "Path to API; starting with (at least): /"
+              },
+              "port": {
+                "type": "number",
+                "description": "Push Notification Server port"
+              },
+              "token": {
+                "type": "string",
+                "description": "Push Notifications Application API Token/Key (30 characters)"
+              },
+              "user": {
+                "type": "string",
+                "description": "Push Notification User API Key (30 characters)"
+              },
+              "sound": {
+                "type": "string",
+                "description": "Push Notification Sound"
+              },
+              "priority": {
+                "type": "number",
+                "description": "Push Notification Priority (-2 .. 2)"
+              },
+              "rateLimit": {
+                "type": "number",
+                "description": "Push Notification Messages Rate Limit (1 .. 20)"
+              },
+              "rateLimitTime": {
+                "type": "number",
+                "description": "Push Notification Time Rate Limit, in ms (1 .. 5*60_000)"
+              },
+              "pushEvents": {
+                "type": "boolean",
+                "description": "Controls if the NoCloud Events are forwarded or not"
+              },
+              "processEvents": {
+                "type": "boolean",
+                "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
+              }
+            }
+          },
           "ntpClient": {
             "type": "object",
             "additionalProperties": false,
@@ -493,7 +565,7 @@
               },
               "server": {
                 "type": "string",
-                "description": "Can be either an IP or a Domain Name"
+                "description": "Can be either an IP or a FQDN"
               },
               "port": {
                 "type": "number"
@@ -828,7 +900,7 @@
           },
           "server": {
             "type": "string",
-            "description": "Can be either an IP or a Domain Name"
+            "description": "Can be either an IP or a FQDN"
           },
           "port": {
             "type": "number"
@@ -852,6 +924,74 @@
         "properties": {
           "enabled": {
             "type": "boolean"
+          }
+        }
+      },
+      "PushNotifClientConfigDTO": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "enabled",
+          "server",
+          "path",
+          "port",
+          "token",
+          "user",
+          "sound",
+          "priority",
+          "rateLimit",
+          "rateLimitTime",
+          "pushEvents",
+          "processEvents"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Controls the status of NoCloud Push Notifications Connectivity"
+          },
+          "server": {
+            "type": "string",
+            "description": "Can be either an IP or a FQDN"
+          },
+          "path": {
+            "type": "string",
+            "description": "Path to API; starting with (at least): /"
+          },
+          "port": {
+            "type": "number",
+            "description": "Push Notification Server port"
+          },
+          "token": {
+            "type": "string",
+            "description": "Push Notifications Application API Token/Key (30 characters)"
+          },
+          "user": {
+            "type": "string",
+            "description": "Push Notification User API Key (30 characters)"
+          },
+          "sound": {
+            "type": "string",
+            "description": "Push Notification Sound"
+          },
+          "priority": {
+            "type": "number",
+            "description": "Push Notification Priority (-2 .. 2)"
+          },
+          "rateLimit": {
+            "type": "number",
+            "description": "Push Notification Messages Rate Limit (1 .. 20)"
+          },
+          "rateLimitTime": {
+            "type": "number",
+            "description": "Push Notification Time Rate Limit, in ms (1 .. 5*60_000)"
+          },
+          "pushEvents": {
+            "type": "boolean",
+            "description": "Controls if the NoCloud Events are forwarded or not"
+          },
+          "processEvents": {
+            "type": "boolean",
+            "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
           }
         }
       },
@@ -2585,6 +2725,187 @@
           }
         ]
       },
+      "NoCloudPushNotifClientDisabledState": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "__class": {
+                    "type": "string"
+                  },
+                  "metaData": {
+                    "type": "object"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time this state was entered"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "NoCloudPushNotifClientEnabledState": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "__class": {
+                    "type": "string"
+                  },
+                  "metaData": {
+                    "type": "object"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time this state was entered"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "NoCloudPushNotifClientErrorState": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "__class": {
+                    "type": "string"
+                  },
+                  "metaData": {
+                    "type": "object"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time this state was entered"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "transient",
+                  "name_resolution",
+                  "connection",
+                  "persisting"
+                ]
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "NoCloudPushNotifClientState": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "__class": {
+                "type": "string"
+              },
+              "metaData": {
+                "type": "object"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "format": "date-time",
+                "description": "The time this state was entered"
+              }
+            }
+          }
+        ]
+      },
+      "NoCloudPushNotifClientSyncedState": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "__class": {
+                    "type": "string"
+                  },
+                  "metaData": {
+                    "type": "object"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time this state was entered"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "lastMessage": {
+                "type": "string",
+                "description": "The last message successfully sent"
+              },
+              "lastTitle": {
+                "type": "string",
+                "nullable": true,
+                "description": "The title of the last message (nullable)"
+              },
+              "lastPriority": {
+                "type": "number",
+                "description": "The priority of the last message"
+              }
+            },
+            "required": [
+              "lastMessage",
+              "lastPriority"
+            ]
+          }
+        ]
+      },
       "NoCloudUpdaterApplyPendingState": {
         "allOf": [
           {
@@ -3199,6 +3520,46 @@
           "backward",
           "rotate_clockwise",
           "rotate_counterclockwise"
+        ]
+      },
+      "NoCloudManualMIoTCommandAction": {
+        "type": "string",
+        "description": "The MIoT command to perform (e.g.: get_properties, set_properties, action)",
+        "enum": [
+          "get_properties",
+          "set_properties",
+          "action"
+        ]
+      },
+      "NoCloudManualMIoTCommandInteraction": {
+        "type": "object",
+        "properties": {
+          "miotcmd": {
+            "type": "string",
+            "description": "The MIoT command to perform (e.g.: get_properties, set_properties, action)",
+            "enum": [
+              "get_properties",
+              "set_properties",
+              "action"
+            ]
+          },
+          "siid": {
+            "type": "string",
+            "description": "Service ID of the command. Allowed values: 1 to 99999."
+          },
+          "piid": {
+            "type": "string",
+            "description": "Property or Action ID of the command. Allowed values: 1 to 9999"
+          },
+          "value": {
+            "type": "string",
+            "description": "Required for commands that write/update/set something and optional for actions"
+          }
+        },
+        "required": [
+          "miotcmd",
+          "siid",
+          "piid"
         ]
       }
     }
@@ -4531,7 +4892,7 @@
                     },
                     "server": {
                       "type": "string",
-                      "description": "Can be either an IP or a Domain Name"
+                      "description": "Can be either an IP or a FQDN"
                     },
                     "port": {
                       "type": "number"
@@ -4575,7 +4936,7 @@
                   },
                   "server": {
                     "type": "string",
-                    "description": "Can be either an IP or a Domain Name"
+                    "description": "Can be either an IP or a FQDN"
                   },
                   "port": {
                     "type": "number"
@@ -4599,6 +4960,381 @@
                     "port": 123,
                     "interval": 7200000,
                     "timeout": 10000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/api/v2/pushnotifclient/status": {
+      "get": {
+        "tags": [
+          "PushNotif"
+        ],
+        "summary": "Get Push Notifications Client status",
+        "responses": {
+          "200": {
+            "description": "Push Notifications Client's current status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "type": "object",
+                      "oneOf": [
+                        {
+                          "allOf": [
+                            {
+                              "allOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "__class": {
+                                      "type": "string"
+                                    },
+                                    "metaData": {
+                                      "type": "object"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "timestamp": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "The time this state was entered"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "allOf": [
+                            {
+                              "allOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "__class": {
+                                      "type": "string"
+                                    },
+                                    "metaData": {
+                                      "type": "object"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "timestamp": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "The time this state was entered"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "allOf": [
+                            {
+                              "allOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "__class": {
+                                      "type": "string"
+                                    },
+                                    "metaData": {
+                                      "type": "object"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "timestamp": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "The time this state was entered"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "unknown",
+                                    "transient",
+                                    "name_resolution",
+                                    "connection",
+                                    "persisting"
+                                  ]
+                                },
+                                "message": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "allOf": [
+                            {
+                              "allOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "__class": {
+                                      "type": "string"
+                                    },
+                                    "metaData": {
+                                      "type": "object"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "timestamp": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "The time this state was entered"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "lastMessage": {
+                                  "type": "string",
+                                  "description": "The last message successfully sent"
+                                },
+                                "lastTitle": {
+                                  "type": "string",
+                                  "nullable": true,
+                                  "description": "The title of the last message (nullable)"
+                                },
+                                "lastPriority": {
+                                  "type": "number",
+                                  "description": "The priority of the last message"
+                                }
+                              },
+                              "required": [
+                                "lastMessage",
+                                "lastPriority"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "robotTime": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/pushnotifclient/config": {
+      "get": {
+        "tags": [
+          "PushNotif"
+        ],
+        "summary": "Get Push Notifications Client configuration",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "enabled",
+                    "server",
+                    "path",
+                    "port",
+                    "token",
+                    "user",
+                    "sound",
+                    "priority",
+                    "rateLimit",
+                    "rateLimitTime",
+                    "pushEvents",
+                    "processEvents"
+                  ],
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean",
+                      "description": "Controls the status of NoCloud Push Notifications Connectivity"
+                    },
+                    "server": {
+                      "type": "string",
+                      "description": "Can be either an IP or a FQDN"
+                    },
+                    "path": {
+                      "type": "string",
+                      "description": "Path to API; starting with (at least): /"
+                    },
+                    "port": {
+                      "type": "number",
+                      "description": "Push Notification Server port"
+                    },
+                    "token": {
+                      "type": "string",
+                      "description": "Push Notifications Application API Token/Key (30 characters)"
+                    },
+                    "user": {
+                      "type": "string",
+                      "description": "Push Notification User API Key (30 characters)"
+                    },
+                    "sound": {
+                      "type": "string",
+                      "description": "Push Notification Sound"
+                    },
+                    "priority": {
+                      "type": "number",
+                      "description": "Push Notification Priority (-2 .. 2)"
+                    },
+                    "rateLimit": {
+                      "type": "number",
+                      "description": "Push Notification Messages Rate Limit (1 .. 20)"
+                    },
+                    "rateLimitTime": {
+                      "type": "number",
+                      "description": "Push Notification Time Rate Limit, in ms (1 .. 5*60_000)"
+                    },
+                    "pushEvents": {
+                      "type": "boolean",
+                      "description": "Controls if the NoCloud Events are forwarded or not"
+                    },
+                    "processEvents": {
+                      "type": "boolean",
+                      "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PushNotif"
+        ],
+        "summary": "Update Push Notification Client configuration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "enabled",
+                  "server",
+                  "path",
+                  "port",
+                  "token",
+                  "user",
+                  "sound",
+                  "priority",
+                  "rateLimit",
+                  "rateLimitTime",
+                  "pushEvents",
+                  "processEvents"
+                ],
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "description": "Controls the status of NoCloud Push Notifications Connectivity"
+                  },
+                  "server": {
+                    "type": "string",
+                    "description": "Can be either an IP or a FQDN"
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "Path to API; starting with (at least): /"
+                  },
+                  "port": {
+                    "type": "number",
+                    "description": "Push Notification Server port"
+                  },
+                  "token": {
+                    "type": "string",
+                    "description": "Push Notifications Application API Token/Key (30 characters)"
+                  },
+                  "user": {
+                    "type": "string",
+                    "description": "Push Notification User API Key (30 characters)"
+                  },
+                  "sound": {
+                    "type": "string",
+                    "description": "Push Notification Sound"
+                  },
+                  "priority": {
+                    "type": "number",
+                    "description": "Push Notification Priority (-2 .. 2)"
+                  },
+                  "rateLimit": {
+                    "type": "number",
+                    "description": "Push Notification Messages Rate Limit (1 .. 20)"
+                  },
+                  "rateLimitTime": {
+                    "type": "number",
+                    "description": "Push Notification Time Rate Limit, in ms (1 .. 5*60_000)"
+                  },
+                  "pushEvents": {
+                    "type": "boolean",
+                    "description": "Controls if the NoCloud Events are forwarded or not"
+                  },
+                  "processEvents": {
+                    "type": "boolean",
+                    "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
+                  }
+                }
+              },
+              "examples": {
+                "custom": {
+                  "description": "Configure Push Notification Client Settings",
+                  "value": {
+                    "enabled": false,
+                    "server": "api.pushover.net",
+                    "path": "/1/messages.json",
+                    "port": 443,
+                    "token": "1234567890abcdefghijABCDEFGHIJ",
+                    "user": "abcdefghij1234567890ABCDEFGHIJ",
+                    "sound": "magic",
+                    "priority": 0,
+                    "rateLimit": 5,
+                    "rateLimitTime": 60000,
+                    "pushEvents": false,
+                    "processEvents": false
                   }
                 }
               }
@@ -8879,6 +9615,146 @@
                           "backward",
                           "rotate_clockwise",
                           "rotate_counterclockwise"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/ManualMIoTCommandCapability": {
+      "get": {
+        "tags": [
+          "ManualMIoTCommandCapability"
+        ],
+        "summary": "Currently, the GET / route is a dummy endpoint, since no runtime status is needed.",
+        "description": "Returns a static placeholder and does not provide a real status.",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ManualMIoTCommandCapability"
+        ],
+        "summary": "Send a manual MIoT command to the robot",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "miotcmd": {
+                    "type": "string",
+                    "description": "The MIoT command to perform (e.g.: get_properties, set_properties, action)",
+                    "enum": [
+                      "get_properties",
+                      "set_properties",
+                      "action"
+                    ]
+                  },
+                  "siid": {
+                    "type": "string",
+                    "description": "Service ID of the command. Allowed values: 1 to 99999."
+                  },
+                  "piid": {
+                    "type": "string",
+                    "description": "Property or Action ID of the command. Allowed values: 1 to 9999"
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "Required for commands that write/update/set something and optional for actions"
+                  }
+                },
+                "required": [
+                  "miotcmd",
+                  "siid",
+                  "piid"
+                ]
+              },
+              "examples": {
+                "get_properties": {
+                  "description": "Fetch property values",
+                  "value": {
+                    "miotcmd": "get_properties",
+                    "siid": "1",
+                    "piid": "5"
+                  }
+                },
+                "set_properties": {
+                  "description": "Set property values",
+                  "value": {
+                    "miotcmd": "set_properties",
+                    "siid": "1",
+                    "piid": "5",
+                    "value": "0"
+                  }
+                },
+                "action": {
+                  "description": "Execute an action with or without values",
+                  "value": {
+                    "miotcmd": "action",
+                    "siid": "1",
+                    "piid": "5",
+                    "value": "start"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/ManualMIoTCommandCapability/properties": {
+      "get": {
+        "tags": [
+          "ManualMIoTCommandCapability"
+        ],
+        "summary": "Get supported commands for the capability",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "supportedManualMIoTCommandActions": {
+                      "type": "array",
+                      "description": "List of supported MIoT commands",
+                      "items": {
+                        "type": "string",
+                        "description": "The MIoT command to perform (e.g.: get_properties, set_properties, action)",
+                        "enum": [
+                          "get_properties",
+                          "set_properties",
+                          "action"
                         ]
                       }
                     }
