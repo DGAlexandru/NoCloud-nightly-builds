@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-13T22:06:49.028Z)
+## NoCloud nightly (2026-01-14T16:51:51.274Z)
 ### Breaking Changes
 
 - **Vendor.NoCloud**: Renaming MockRobot to MockNoCloudRobot [`46ebee0`](https://github.com/DGAlexandru/NoCloud/commit/46ebee005f7721491f687b3a763b84c64786b03a)
@@ -44,6 +44,7 @@
 
 ### Refactoring
 
+- **Core**: Tweaking Push Notifications option [`29c96c9`](https://github.com/DGAlexandru/NoCloud/commit/29c96c93fd27c437bb7e73045bd9f3e2822dbf3c)
 - **Vendor.Dreame**: Optimize "VacuumThenMop" option [`6f195b4`](https://github.com/DGAlexandru/NoCloud/commit/6f195b4c3d81c92811800065820ecf48f18f46a4)
 - **MQTT**: Simplify segment ID validation [`7b8a1bc`](https://github.com/DGAlexandru/NoCloud/commit/7b8a1bc99bb85940370d67cb4f9b4f699db8fe74)
 - **Core**: Optimization: move map polling logic into NoCloudRobot base class [`72fd097`](https://github.com/DGAlexandru/NoCloud/commit/72fd09785fcc8dbc51332504d4e1dbcee781f285)
