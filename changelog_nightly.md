@@ -1,11 +1,17 @@
-## NoCloud nightly (2026-01-14T16:51:51.274Z)
+## NoCloud nightly (2026-01-17T03:14:27.486Z)
 ### Breaking Changes
 
+- Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
 - **Vendor.NoCloud**: Renaming MockRobot to MockNoCloudRobot [`46ebee0`](https://github.com/DGAlexandru/NoCloud/commit/46ebee005f7721491f687b3a763b84c64786b03a)
 - Merge AutoEmptyDockAutoEmptyControlCapability into AutoEmptyDockAutoEmptyIntervalControlCapability [`74b0b3b`](https://github.com/DGAlexandru/NoCloud/commit/74b0b3b267c3f798b01a588a83aa8f00cfb384e1)
 
 ### Features
 
+- **Updater**: Optimize UI response, message and wait time during the Update process. [`1710a98`](https://github.com/DGAlexandru/NoCloud/commit/1710a9844bd044b3c10421cf7b287449770a74df)
+- **Vendor.Dreame**: Migrating from Quirks to Capability: Mop Auto-Drying (AutoDry) [`35b1a59`](https://github.com/DGAlexandru/NoCloud/commit/35b1a59905cbd8f2501dfdda41ab12502d4fc0a1)
+- **Core**: Migrating "Mop Auto-Drying" from Quirks to Capability [`918beca`](https://github.com/DGAlexandru/NoCloud/commit/918beca993fd0ec8373e7b581041a0cea01bc9e5)
+- **Vendor.Dreame**: Migrating from Quirks to Capability: Extend Mop for Furniture Legs (MopScalable2) [`be57905`](https://github.com/DGAlexandru/NoCloud/commit/be5790573fa623268ceaf729b930338c831f1885)
+- **Core**: Migrating "Mop Extension for Furniture Legs" from Quirks to Capability [`974d859`](https://github.com/DGAlexandru/NoCloud/commit/974d8598bb9977045880c92d1982ea6d446078ae)
 - **UI**: Adding Push Notifications Connectivity page - configure settings, run tests [`28946ee`](https://github.com/DGAlexandru/NoCloud/commit/28946ee703a0a6d96109be6d06ff8a7091ea62c7)
 - **Core**: Adding the option to forward robot's events (notifications) to an external app [`4c5def6`](https://github.com/DGAlexandru/NoCloud/commit/4c5def60d089fee0f6f8cc1b7d718dd415943c88)
 - **Core**: Adding the option to send custom / manual MIoT commands. Can be found on Log page. BackEnd done only for Dreame robots. [`263d281`](https://github.com/DGAlexandru/NoCloud/commit/263d2816bbfc68a00efd69553c9d23452cb27fb5)
@@ -44,6 +50,7 @@
 
 ### Refactoring
 
+- **Vendor.Dreame**: Grouping all the ephemeral states into a single object [`1380c37`](https://github.com/DGAlexandru/NoCloud/commit/1380c37a8c0de2e2ec4d310cc45743b83a6e462c)
 - **Core**: Tweaking Push Notifications option [`29c96c9`](https://github.com/DGAlexandru/NoCloud/commit/29c96c93fd27c437bb7e73045bd9f3e2822dbf3c)
 - **Vendor.Dreame**: Optimize "VacuumThenMop" option [`6f195b4`](https://github.com/DGAlexandru/NoCloud/commit/6f195b4c3d81c92811800065820ecf48f18f46a4)
 - **MQTT**: Simplify segment ID validation [`7b8a1bc`](https://github.com/DGAlexandru/NoCloud/commit/7b8a1bc99bb85940370d67cb4f9b4f699db8fe74)
