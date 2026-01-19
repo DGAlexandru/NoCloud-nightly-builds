@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-19T11:06:37.067Z)
+## NoCloud nightly (2026-01-19T12:18:04.388Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -34,6 +34,7 @@
 
 ### Fixes
 
+- **Core**: Been here before.. Win vs. *nix .. case-insensitive vs sensitive :( [`c33b857`](https://github.com/DGAlexandru/NoCloud/commit/c33b85776e783ecda74d1b878e335daa018f9456)
 - **Vendor.Dreame**: Add missing extra materials: carpet, low & medium pile carpet to DreameMapParser [`9dceb81`](https://github.com/DGAlexandru/NoCloud/commit/9dceb816b0182e2c47a119f213ea8f3027ffae17)
 - **Vendor.Dreame**: Remove legacy payload for Manual Mop Clean Trigger that wasn't used by any current supported robots [`3552aa8`](https://github.com/DGAlexandru/NoCloud/commit/3552aa8e3b8c704881eb027f1088161c52c06de7)
 - **Core**: Fixing a GitHub Desktop BUG that didn't see filename changes from upper to lower and vice versa - step2 [`39aa3ab`](https://github.com/DGAlexandru/NoCloud/commit/39aa3ab17e9891521156834e8bf209bb137c56c2)
