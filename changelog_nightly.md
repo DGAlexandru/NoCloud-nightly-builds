@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-17T03:14:27.486Z)
+## NoCloud nightly (2026-01-19T11:06:37.067Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -7,6 +7,11 @@
 
 ### Features
 
+- **Vendor.Dreame**: MapSegmentMaterialControlCapability [`a06f03c`](https://github.com/DGAlexandru/NoCloud/commit/a06f03ca0c6cc612b7fa66c6ce9f5205bd7a5a25)
+- **UI**: MapSegmentMaterialControlCapability [`ad0f0f1`](https://github.com/DGAlexandru/NoCloud/commit/ad0f0f1c3541fa63a0937ce843cc38f9567a91a3)
+- **Core**: MapSegmentMaterialControlCapability [`8cb63ad`](https://github.com/DGAlexandru/NoCloud/commit/8cb63ad526b9d52f8ecc5988f2dc34b7cdd6425f)
+- **Core**: Render detected carpets on Map with dedicated style [`c7c8231`](https://github.com/DGAlexandru/NoCloud/commit/c7c8231da446654d032a789d56fc188f11d65dc8)
+- **UI**: Adding more and better :) Achievements [`8f8e622`](https://github.com/DGAlexandru/NoCloud/commit/8f8e62276e84cf416ce06a19a977db7f8fcb2d0d)
 - **Updater**: Optimize UI response, message and wait time during the Update process. [`1710a98`](https://github.com/DGAlexandru/NoCloud/commit/1710a9844bd044b3c10421cf7b287449770a74df)
 - **Vendor.Dreame**: Migrating from Quirks to Capability: Mop Auto-Drying (AutoDry) [`35b1a59`](https://github.com/DGAlexandru/NoCloud/commit/35b1a59905cbd8f2501dfdda41ab12502d4fc0a1)
 - **Core**: Migrating "Mop Auto-Drying" from Quirks to Capability [`918beca`](https://github.com/DGAlexandru/NoCloud/commit/918beca993fd0ec8373e7b581041a0cea01bc9e5)
@@ -29,6 +34,8 @@
 
 ### Fixes
 
+- **Vendor.Dreame**: Add missing extra materials: carpet, low & medium pile carpet to DreameMapParser [`9dceb81`](https://github.com/DGAlexandru/NoCloud/commit/9dceb816b0182e2c47a119f213ea8f3027ffae17)
+- **Vendor.Dreame**: Remove legacy payload for Manual Mop Clean Trigger that wasn't used by any current supported robots [`3552aa8`](https://github.com/DGAlexandru/NoCloud/commit/3552aa8e3b8c704881eb027f1088161c52c06de7)
 - **Core**: Fixing a GitHub Desktop BUG that didn't see filename changes from upper to lower and vice versa - step2 [`39aa3ab`](https://github.com/DGAlexandru/NoCloud/commit/39aa3ab17e9891521156834e8bf209bb137c56c2)
 - **Core**: Fixing a GitHub Desktop BUG that didn't see filename changes from upper to lower and vice versa - step1 [`dfab044`](https://github.com/DGAlexandru/NoCloud/commit/dfab044588957566945253035d8a09263d1a7f75)
 - **Vendor.RoboRock**: Code migration incomplete from the forked repository [`1e1bab4`](https://github.com/DGAlexandru/NoCloud/commit/1e1bab4323b12057a643c3a8f6c298088587921e)
@@ -50,6 +57,9 @@
 
 ### Refactoring
 
+- **WebServer**: Resource not found - 404 pages [`542c091`](https://github.com/DGAlexandru/NoCloud/commit/542c091630fc1d9d40d14dd6729fc2fab4df92c2)
+- **UI**: MapLayer color handling cleanup [`0cdcf2f`](https://github.com/DGAlexandru/NoCloud/commit/0cdcf2f6a1f77aea26bda730fc6fd2dc4504b1bd)
+- **Vendor.Dreame**: DreameUtil module - serialize / deserialize more clear; adding more AI Camera Settings plus helpers to optimize enabling/disabling its flags [`532d31c`](https://github.com/DGAlexandru/NoCloud/commit/532d31cda4fc9a671bd3b1a91482d1f6c7939807)
 - **Vendor.Dreame**: Grouping all the ephemeral states into a single object [`1380c37`](https://github.com/DGAlexandru/NoCloud/commit/1380c37a8c0de2e2ec4d310cc45743b83a6e462c)
 - **Core**: Tweaking Push Notifications option [`29c96c9`](https://github.com/DGAlexandru/NoCloud/commit/29c96c93fd27c437bb7e73045bd9f3e2822dbf3c)
 - **Vendor.Dreame**: Optimize "VacuumThenMop" option [`6f195b4`](https://github.com/DGAlexandru/NoCloud/commit/6f195b4c3d81c92811800065820ecf48f18f46a4)
@@ -62,6 +72,7 @@
 
 ### Chores
 
+- **Build**: Update dependencies, fix backend testing [`ef7576b`](https://github.com/DGAlexandru/NoCloud/commit/ef7576b142041663bc8d49e3ba7d65e02bf9ab74)
 - **BuildTools**: Fixing ESLint warnings - groups not sorted, mainly [`063f9e1`](https://github.com/DGAlexandru/NoCloud/commit/063f9e18c6eedc1edaafd97b7f8734e186884cc4)
 - **BuildTools**: Migrating NightlyBuilds from "master" branch to "main" branch, to be in sync with GitHub recommendations [`4d334a3`](https://github.com/DGAlexandru/NoCloud/commit/4d334a3da0230c8146b7d1ffaa5ce405d681d40e)
 - **BuildTools**: False positive indentation problem - commented code [`ae86a13`](https://github.com/DGAlexandru/NoCloud/commit/ae86a136712acd5f5d58012fce881f91971d2f7b)
