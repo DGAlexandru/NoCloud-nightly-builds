@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-19T12:18:04.388Z)
+## NoCloud nightly (2026-01-21T03:58:35.050Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
