@@ -246,7 +246,8 @@
         "properties": {
           "embedded": {
             "type": "boolean",
-            "description": "Whether or not NoCloud is running on the robot itself.\nDetermines if we can do FS access and more."
+            "description": "Whether or not NoCloud is running on the robot itself.\nDetermines if we can do FS access and more.",
+            "default": true
           },
           "robot": {
             "type": "object",
@@ -257,10 +258,29 @@
             "properties": {
               "implementation": {
                 "type": "string",
-                "description": "The name of the implementation that should be used.\nUse \"auto\" to autodetect when embedded."
+                "description": "The name of the implementation that should be used.\nUse \"auto\" to autodetect when embedded.",
+                "default": "auto"
               },
               "implementationSpecificConfig": {
-                "type": "object"
+                "type": "object",
+                "description": "Used when NoCloud doesn't run on robot.",
+                "additionalProperties": false,
+                "properties": {
+                  "ip": {
+                    "type": "string",
+                    "description": "IPv4 or FQDN of the Robot"
+                  },
+                  "deviceId": {
+                    "type": "integer"
+                  },
+                  "cloudSecret": {
+                    "type": "string"
+                  },
+                  "localSecret": {
+                    "type": "string"
+                  }
+                },
+                "default": {}
               }
             }
           },
@@ -273,7 +293,8 @@
             ],
             "properties": {
               "port": {
-                "type": "number"
+                "type": "number",
+                "default": 80
               },
               "basicAuth": {
                 "type": "object",
@@ -285,18 +306,22 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                   },
                   "username": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "NoCloud"
                   },
                   "password": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "NoCloud"
                   }
                 }
               },
               "blockExternalAccess": {
-                "type": "boolean"
+                "type": "boolean",
+                "default": true
               }
             }
           },
@@ -312,7 +337,8 @@
             ],
             "properties": {
               "enabled": {
-                "type": "boolean"
+                "type": "boolean",
+                "default": false
               },
               "connection": {
                 "type": "object",
@@ -323,12 +349,14 @@
                 ],
                 "properties": {
                   "host": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "foobar.example"
                   },
                   "port": {
                     "type": "integer",
                     "minimum": 1,
-                    "maximum": 65535
+                    "maximum": 65535,
+                    "default": 1883
                   },
                   "tls": {
                     "type": "object",
@@ -338,15 +366,18 @@
                     ],
                     "properties": {
                       "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                       },
                       "ca": {
                         "type": "string",
-                        "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported."
+                        "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported.",
+                        "default": ""
                       },
                       "ignoreCertificateErrors": {
                         "type": "boolean",
-                        "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks."
+                        "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks.",
+                        "default": false
                       }
                     }
                   },
@@ -362,13 +393,16 @@
                         ],
                         "properties": {
                           "enabled": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": false
                           },
                           "username": {
-                            "type": "string"
+                            "type": "string",
+                            "default": ""
                           },
                           "password": {
-                            "type": "string"
+                            "type": "string",
+                            "default": ""
                           }
                         }
                       },
@@ -380,15 +414,18 @@
                         ],
                         "properties": {
                           "enabled": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": false
                           },
                           "certificate": {
                             "type": "string",
-                            "description": "The full certificate as a multi-line string. Filesystem paths are not supported."
+                            "description": "The full certificate as a multi-line string. Filesystem paths are not supported.",
+                            "default": ""
                           },
                           "key": {
                             "type": "string",
-                            "description": "The full key as a multi-line string. Filesystem paths are not supported."
+                            "description": "The full key as a multi-line string. Filesystem paths are not supported.",
+                            "default": ""
                           }
                         }
                       }
@@ -402,7 +439,8 @@
                 "properties": {
                   "identifier": {
                     "type": "string",
-                    "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID"
+                    "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID",
+                    "default": ""
                   }
                 }
               },
@@ -412,11 +450,13 @@
                 "properties": {
                   "topicPrefix": {
                     "type": "string",
-                    "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols"
+                    "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols",
+                    "default": ""
                   },
                   "provideMapData": {
                     "type": "boolean",
-                    "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here."
+                    "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here.",
+                    "default": true
                   }
                 }
               },
@@ -437,10 +477,12 @@
                     ],
                     "properties": {
                       "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": true
                       },
                       "cleanAttributesOnShutdown": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   },
@@ -453,10 +495,12 @@
                     ],
                     "properties": {
                       "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": true
                       },
                       "cleanAutoconfOnShutdown": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -477,7 +521,8 @@
                     "CarpetModeControlCapability",
                     "CarpetSensorModeControlCapability"
                   ]
-                }
+                },
+                "default": []
               }
             }
           },
@@ -496,6 +541,7 @@
               "retry",
               "expire",
               "titleID",
+              "url",
               "rateLimit",
               "rateLimitTime",
               "pushEvents",
@@ -504,13 +550,13 @@
             "properties": {
               "enabled": {
                 "type": "boolean",
-                "default": "false",
+                "default": false,
                 "description": "Controls the status of NoCloud Push Notifications Connectivity"
               },
               "server": {
                 "type": "string",
                 "default": "api.pushover.net",
-                "description": "Can be either an IP or a FQDN"
+                "description": "Can be either an IPv4 or a FQDN"
               },
               "path": {
                 "type": "string",
@@ -524,10 +570,12 @@
               },
               "token": {
                 "type": "string",
+                "default": "1234567890abcdefghijABCDEFGHIJ",
                 "description": "Push Notifications Application API Token/Key (30 characters)"
               },
               "user": {
                 "type": "string",
+                "default": "abcdefghij1234567890ABCDEFGHIJ",
                 "description": "Push Notification User API Key (30 characters)"
               },
               "sound": {
@@ -558,7 +606,7 @@
                   "vibrate"
                 ],
                 "default": "magic",
-                "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan, incoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
+                "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan,\n\tincoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
               },
               "priority": {
                 "type": "number",
@@ -568,7 +616,7 @@
               "retry": {
                 "type": "number",
                 "default": 30,
-                "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60) "
+                "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60)"
               },
               "expire": {
                 "type": "number",
@@ -579,6 +627,11 @@
                 "type": "string",
                 "default": "NoCloud Robo1",
                 "description": "Add a custom ID at the beginning of the message title (subject)."
+              },
+              "url": {
+                "type": "string",
+                "default": "http://127.0.0.1/",
+                "description": "URL added to the message - link to this Robot NoCloud implementation."
               },
               "rateLimit": {
                 "type": "number",
@@ -592,12 +645,12 @@
               },
               "pushEvents": {
                 "type": "boolean",
-                "default": "false",
+                "default": false,
                 "description": "Controls if the NoCloud Events are forwarded or not"
               },
               "processEvents": {
                 "type": "boolean",
-                "default": "false",
+                "default": false,
                 "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
               }
             }
@@ -614,22 +667,27 @@
             ],
             "properties": {
               "enabled": {
-                "type": "boolean"
+                "type": "boolean",
+                "default": true
               },
               "server": {
                 "type": "string",
-                "description": "Can be either an IP or a FQDN"
+                "description": "Can be either an IPv4 or a FQDN",
+                "default": "pool.ntp.org"
               },
               "port": {
-                "type": "number"
+                "type": "number",
+                "default": 123
               },
               "interval": {
                 "type": "number",
-                "description": "NTP Sync Interval in Milliseconds"
+                "description": "NTP Sync Interval in Milliseconds",
+                "default": 28800000
               },
               "timeout": {
                 "type": "number",
-                "description": "NTP Sync Timeout in Milliseconds"
+                "description": "NTP Sync Timeout in Milliseconds",
+                "default": 10000
               }
             }
           },
@@ -641,7 +699,8 @@
             ],
             "properties": {
               "enabled": {
-                "type": "boolean"
+                "type": "boolean",
+                "default": true
               }
             }
           },
@@ -654,7 +713,7 @@
             "properties": {
               "enabled": {
                 "type": "boolean",
-                "default": "true"
+                "default": true
               },
               "updateProvider": {
                 "type": "object",
@@ -689,10 +748,15 @@
               "info",
               "warn",
               "error"
-            ]
+            ],
+            "default": "info"
           },
           "debug": {
-            "type": "object"
+            "type": "object",
+            "default": {
+              "debugHassAnchors": false,
+              "storeRawFDSUploads": false
+            }
           },
           "oobe": {
             "type": "object",
@@ -700,7 +764,8 @@
             "additionalProperties": false,
             "properties": {
               "welcomeDialogDismissed": {
-                "type": "boolean"
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -715,7 +780,8 @@
                   "friendlyName": {
                     "type": "string",
                     "pattern": "^[a-zA-Z0-9 -]{0,24}$",
-                    "description": "An optional user-defined friendly name for the NoCloud instance"
+                    "description": "An optional user-defined friendly name for the NoCloud instance",
+                    "default": ""
                   }
                 }
               }
@@ -723,7 +789,8 @@
           },
           "_version": {
             "type": "string",
-            "description": "Used for migration purposes"
+            "description": "Used mainly for configuration migration purposes",
+            "default": "1.1.1.1"
           }
         }
       },
@@ -734,7 +801,8 @@
           "friendlyName": {
             "type": "string",
             "pattern": "^[a-zA-Z0-9 -]{0,24}$",
-            "description": "An optional user-defined friendly name for the NoCloud instance"
+            "description": "An optional user-defined friendly name for the NoCloud instance",
+            "default": ""
           }
         }
       },
@@ -750,7 +818,8 @@
         ],
         "properties": {
           "enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "connection": {
             "type": "object",
@@ -761,12 +830,14 @@
             ],
             "properties": {
               "host": {
-                "type": "string"
+                "type": "string",
+                "default": "foobar.example"
               },
               "port": {
                 "type": "integer",
                 "minimum": 1,
-                "maximum": 65535
+                "maximum": 65535,
+                "default": 1883
               },
               "tls": {
                 "type": "object",
@@ -776,15 +847,18 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                   },
                   "ca": {
                     "type": "string",
-                    "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported."
+                    "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported.",
+                    "default": ""
                   },
                   "ignoreCertificateErrors": {
                     "type": "boolean",
-                    "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks."
+                    "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks.",
+                    "default": false
                   }
                 }
               },
@@ -800,13 +874,16 @@
                     ],
                     "properties": {
                       "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                       },
                       "username": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                       },
                       "password": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                       }
                     }
                   },
@@ -818,15 +895,18 @@
                     ],
                     "properties": {
                       "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                       },
                       "certificate": {
                         "type": "string",
-                        "description": "The full certificate as a multi-line string. Filesystem paths are not supported."
+                        "description": "The full certificate as a multi-line string. Filesystem paths are not supported.",
+                        "default": ""
                       },
                       "key": {
                         "type": "string",
-                        "description": "The full key as a multi-line string. Filesystem paths are not supported."
+                        "description": "The full key as a multi-line string. Filesystem paths are not supported.",
+                        "default": ""
                       }
                     }
                   }
@@ -840,7 +920,8 @@
             "properties": {
               "identifier": {
                 "type": "string",
-                "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID"
+                "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID",
+                "default": ""
               }
             }
           },
@@ -850,11 +931,13 @@
             "properties": {
               "topicPrefix": {
                 "type": "string",
-                "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols"
+                "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols",
+                "default": ""
               },
               "provideMapData": {
                 "type": "boolean",
-                "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here."
+                "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here.",
+                "default": true
               }
             }
           },
@@ -875,10 +958,12 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": true
                   },
                   "cleanAttributesOnShutdown": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                   }
                 }
               },
@@ -891,10 +976,12 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": true
                   },
                   "cleanAutoconfOnShutdown": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                   }
                 }
               }
@@ -915,7 +1002,8 @@
                 "CarpetModeControlCapability",
                 "CarpetSensorModeControlCapability"
               ]
-            }
+            },
+            "default": []
           }
         }
       },
@@ -929,13 +1017,16 @@
         ],
         "properties": {
           "enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "username": {
-            "type": "string"
+            "type": "string",
+            "default": "NoCloud"
           },
           "password": {
-            "type": "string"
+            "type": "string",
+            "default": "NoCloud"
           }
         }
       },
@@ -951,22 +1042,27 @@
         ],
         "properties": {
           "enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "server": {
             "type": "string",
-            "description": "Can be either an IP or a FQDN"
+            "description": "Can be either an IPv4 or a FQDN",
+            "default": "pool.ntp.org"
           },
           "port": {
-            "type": "number"
+            "type": "number",
+            "default": 123
           },
           "interval": {
             "type": "number",
-            "description": "NTP Sync Interval in Milliseconds"
+            "description": "NTP Sync Interval in Milliseconds",
+            "default": 28800000
           },
           "timeout": {
             "type": "number",
-            "description": "NTP Sync Timeout in Milliseconds"
+            "description": "NTP Sync Timeout in Milliseconds",
+            "default": 10000
           }
         }
       },
@@ -978,7 +1074,8 @@
         ],
         "properties": {
           "enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -997,6 +1094,7 @@
           "retry",
           "expire",
           "titleID",
+          "url",
           "rateLimit",
           "rateLimitTime",
           "pushEvents",
@@ -1005,13 +1103,13 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "Controls the status of NoCloud Push Notifications Connectivity"
           },
           "server": {
             "type": "string",
             "default": "api.pushover.net",
-            "description": "Can be either an IP or a FQDN"
+            "description": "Can be either an IPv4 or a FQDN"
           },
           "path": {
             "type": "string",
@@ -1025,10 +1123,12 @@
           },
           "token": {
             "type": "string",
+            "default": "1234567890abcdefghijABCDEFGHIJ",
             "description": "Push Notifications Application API Token/Key (30 characters)"
           },
           "user": {
             "type": "string",
+            "default": "abcdefghij1234567890ABCDEFGHIJ",
             "description": "Push Notification User API Key (30 characters)"
           },
           "sound": {
@@ -1059,7 +1159,7 @@
               "vibrate"
             ],
             "default": "magic",
-            "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan, incoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
+            "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan,\n\tincoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
           },
           "priority": {
             "type": "number",
@@ -1069,7 +1169,7 @@
           "retry": {
             "type": "number",
             "default": 30,
-            "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60) "
+            "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60)"
           },
           "expire": {
             "type": "number",
@@ -1080,6 +1180,11 @@
             "type": "string",
             "default": "NoCloud Robo1",
             "description": "Add a custom ID at the beginning of the message title (subject)."
+          },
+          "url": {
+            "type": "string",
+            "default": "http://127.0.0.1/",
+            "description": "URL added to the message - link to this Robot NoCloud implementation."
           },
           "rateLimit": {
             "type": "number",
@@ -1093,12 +1198,12 @@
           },
           "pushEvents": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "Controls if the NoCloud Events are forwarded or not"
           },
           "processEvents": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
           }
         }
@@ -1112,7 +1217,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "default": "true"
+            "default": true
           },
           "updateProvider": {
             "type": "object",
@@ -3832,7 +3937,8 @@
                   ],
                   "properties": {
                     "enabled": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": true
                     }
                   }
                 }
@@ -3857,7 +3963,8 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": true
                   }
                 }
               }
@@ -4262,7 +4369,8 @@
                   ],
                   "properties": {
                     "enabled": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "connection": {
                       "type": "object",
@@ -4273,12 +4381,14 @@
                       ],
                       "properties": {
                         "host": {
-                          "type": "string"
+                          "type": "string",
+                          "default": "foobar.example"
                         },
                         "port": {
                           "type": "integer",
                           "minimum": 1,
-                          "maximum": 65535
+                          "maximum": 65535,
+                          "default": 1883
                         },
                         "tls": {
                           "type": "object",
@@ -4288,15 +4398,18 @@
                           ],
                           "properties": {
                             "enabled": {
-                              "type": "boolean"
+                              "type": "boolean",
+                              "default": false
                             },
                             "ca": {
                               "type": "string",
-                              "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported."
+                              "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported.",
+                              "default": ""
                             },
                             "ignoreCertificateErrors": {
                               "type": "boolean",
-                              "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks."
+                              "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks.",
+                              "default": false
                             }
                           }
                         },
@@ -4312,13 +4425,16 @@
                               ],
                               "properties": {
                                 "enabled": {
-                                  "type": "boolean"
+                                  "type": "boolean",
+                                  "default": false
                                 },
                                 "username": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "default": ""
                                 },
                                 "password": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "default": ""
                                 }
                               }
                             },
@@ -4330,15 +4446,18 @@
                               ],
                               "properties": {
                                 "enabled": {
-                                  "type": "boolean"
+                                  "type": "boolean",
+                                  "default": false
                                 },
                                 "certificate": {
                                   "type": "string",
-                                  "description": "The full certificate as a multi-line string. Filesystem paths are not supported."
+                                  "description": "The full certificate as a multi-line string. Filesystem paths are not supported.",
+                                  "default": ""
                                 },
                                 "key": {
                                   "type": "string",
-                                  "description": "The full key as a multi-line string. Filesystem paths are not supported."
+                                  "description": "The full key as a multi-line string. Filesystem paths are not supported.",
+                                  "default": ""
                                 }
                               }
                             }
@@ -4352,7 +4471,8 @@
                       "properties": {
                         "identifier": {
                           "type": "string",
-                          "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID"
+                          "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID",
+                          "default": ""
                         }
                       }
                     },
@@ -4362,11 +4482,13 @@
                       "properties": {
                         "topicPrefix": {
                           "type": "string",
-                          "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols"
+                          "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols",
+                          "default": ""
                         },
                         "provideMapData": {
                           "type": "boolean",
-                          "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here."
+                          "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here.",
+                          "default": true
                         }
                       }
                     },
@@ -4387,10 +4509,12 @@
                           ],
                           "properties": {
                             "enabled": {
-                              "type": "boolean"
+                              "type": "boolean",
+                              "default": true
                             },
                             "cleanAttributesOnShutdown": {
-                              "type": "boolean"
+                              "type": "boolean",
+                              "default": false
                             }
                           }
                         },
@@ -4403,10 +4527,12 @@
                           ],
                           "properties": {
                             "enabled": {
-                              "type": "boolean"
+                              "type": "boolean",
+                              "default": true
                             },
                             "cleanAutoconfOnShutdown": {
-                              "type": "boolean"
+                              "type": "boolean",
+                              "default": false
                             }
                           }
                         }
@@ -4427,7 +4553,8 @@
                           "CarpetModeControlCapability",
                           "CarpetSensorModeControlCapability"
                         ]
-                      }
+                      },
+                      "default": []
                     }
                   }
                 }
@@ -4456,7 +4583,8 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                   },
                   "connection": {
                     "type": "object",
@@ -4467,12 +4595,14 @@
                     ],
                     "properties": {
                       "host": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "foobar.example"
                       },
                       "port": {
                         "type": "integer",
                         "minimum": 1,
-                        "maximum": 65535
+                        "maximum": 65535,
+                        "default": 1883
                       },
                       "tls": {
                         "type": "object",
@@ -4482,15 +4612,18 @@
                         ],
                         "properties": {
                           "enabled": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": false
                           },
                           "ca": {
                             "type": "string",
-                            "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported."
+                            "description": "This may optionally contain a CA certificate as a multi-line string. Filesystem paths are not supported.",
+                            "default": ""
                           },
                           "ignoreCertificateErrors": {
                             "type": "boolean",
-                            "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks."
+                            "description": "This option might be required when using a self-signed cert. Note that you will be exposing yourself to MITM attacks.",
+                            "default": false
                           }
                         }
                       },
@@ -4506,13 +4639,16 @@
                             ],
                             "properties": {
                               "enabled": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "default": false
                               },
                               "username": {
-                                "type": "string"
+                                "type": "string",
+                                "default": ""
                               },
                               "password": {
-                                "type": "string"
+                                "type": "string",
+                                "default": ""
                               }
                             }
                           },
@@ -4524,15 +4660,18 @@
                             ],
                             "properties": {
                               "enabled": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "default": false
                               },
                               "certificate": {
                                 "type": "string",
-                                "description": "The full certificate as a multi-line string. Filesystem paths are not supported."
+                                "description": "The full certificate as a multi-line string. Filesystem paths are not supported.",
+                                "default": ""
                               },
                               "key": {
                                 "type": "string",
-                                "description": "The full key as a multi-line string. Filesystem paths are not supported."
+                                "description": "The full key as a multi-line string. Filesystem paths are not supported.",
+                                "default": ""
                               }
                             }
                           }
@@ -4546,7 +4685,8 @@
                     "properties": {
                       "identifier": {
                         "type": "string",
-                        "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID"
+                        "description": "The desired machine-readable name of the robot. Used in MQTT topics. Defaults to the auto-generated machine ID",
+                        "default": ""
                       }
                     }
                   },
@@ -4556,11 +4696,13 @@
                     "properties": {
                       "topicPrefix": {
                         "type": "string",
-                        "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols"
+                        "description": "You can override the default \"NoCloud\" mqtt topic prefix if you e.g. prefer to group all your mqtt stuff by rooms/floors/protocols",
+                        "default": ""
                       },
                       "provideMapData": {
                         "type": "boolean",
-                        "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here."
+                        "description": "If for some reason you're not interested in receiving map data via MQTT, you can disable that here.",
+                        "default": true
                       }
                     }
                   },
@@ -4581,10 +4723,12 @@
                         ],
                         "properties": {
                           "enabled": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": true
                           },
                           "cleanAttributesOnShutdown": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": false
                           }
                         }
                       },
@@ -4597,10 +4741,12 @@
                         ],
                         "properties": {
                           "enabled": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": true
                           },
                           "cleanAutoconfOnShutdown": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "default": false
                           }
                         }
                       }
@@ -4621,7 +4767,8 @@
                         "CarpetModeControlCapability",
                         "CarpetSensorModeControlCapability"
                       ]
-                    }
+                    },
+                    "default": []
                   }
                 }
               }
@@ -4656,13 +4803,16 @@
                   ],
                   "properties": {
                     "enabled": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "username": {
-                      "type": "string"
+                      "type": "string",
+                      "default": "NoCloud"
                     },
                     "password": {
-                      "type": "string"
+                      "type": "string",
+                      "default": "NoCloud"
                     }
                   }
                 }
@@ -4689,13 +4839,16 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                   },
                   "username": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "NoCloud"
                   },
                   "password": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "NoCloud"
                   }
                 }
               }
@@ -4730,7 +4883,8 @@
                     "friendlyName": {
                       "type": "string",
                       "pattern": "^[a-zA-Z0-9 -]{0,24}$",
-                      "description": "An optional user-defined friendly name for the NoCloud instance"
+                      "description": "An optional user-defined friendly name for the NoCloud instance",
+                      "default": ""
                     }
                   }
                 }
@@ -4754,7 +4908,8 @@
                   "friendlyName": {
                     "type": "string",
                     "pattern": "^[a-zA-Z0-9 -]{0,24}$",
-                    "description": "An optional user-defined friendly name for the NoCloud instance"
+                    "description": "An optional user-defined friendly name for the NoCloud instance",
+                    "default": ""
                   }
                 }
               }
@@ -4967,22 +5122,27 @@
                   ],
                   "properties": {
                     "enabled": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": true
                     },
                     "server": {
                       "type": "string",
-                      "description": "Can be either an IP or a FQDN"
+                      "description": "Can be either an IPv4 or a FQDN",
+                      "default": "pool.ntp.org"
                     },
                     "port": {
-                      "type": "number"
+                      "type": "number",
+                      "default": 123
                     },
                     "interval": {
                       "type": "number",
-                      "description": "NTP Sync Interval in Milliseconds"
+                      "description": "NTP Sync Interval in Milliseconds",
+                      "default": 28800000
                     },
                     "timeout": {
                       "type": "number",
-                      "description": "NTP Sync Timeout in Milliseconds"
+                      "description": "NTP Sync Timeout in Milliseconds",
+                      "default": 10000
                     }
                   }
                 }
@@ -5011,22 +5171,27 @@
                 ],
                 "properties": {
                   "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": true
                   },
                   "server": {
                     "type": "string",
-                    "description": "Can be either an IP or a FQDN"
+                    "description": "Can be either an IPv4 or a FQDN",
+                    "default": "pool.ntp.org"
                   },
                   "port": {
-                    "type": "number"
+                    "type": "number",
+                    "default": 123
                   },
                   "interval": {
                     "type": "number",
-                    "description": "NTP Sync Interval in Milliseconds"
+                    "description": "NTP Sync Interval in Milliseconds",
+                    "default": 28800000
                   },
                   "timeout": {
                     "type": "number",
-                    "description": "NTP Sync Timeout in Milliseconds"
+                    "description": "NTP Sync Timeout in Milliseconds",
+                    "default": 10000
                   }
                 }
               },
@@ -5264,6 +5429,7 @@
                     "retry",
                     "expire",
                     "titleID",
+                    "url",
                     "rateLimit",
                     "rateLimitTime",
                     "pushEvents",
@@ -5272,13 +5438,13 @@
                   "properties": {
                     "enabled": {
                       "type": "boolean",
-                      "default": "false",
+                      "default": false,
                       "description": "Controls the status of NoCloud Push Notifications Connectivity"
                     },
                     "server": {
                       "type": "string",
                       "default": "api.pushover.net",
-                      "description": "Can be either an IP or a FQDN"
+                      "description": "Can be either an IPv4 or a FQDN"
                     },
                     "path": {
                       "type": "string",
@@ -5292,10 +5458,12 @@
                     },
                     "token": {
                       "type": "string",
+                      "default": "1234567890abcdefghijABCDEFGHIJ",
                       "description": "Push Notifications Application API Token/Key (30 characters)"
                     },
                     "user": {
                       "type": "string",
+                      "default": "abcdefghij1234567890ABCDEFGHIJ",
                       "description": "Push Notification User API Key (30 characters)"
                     },
                     "sound": {
@@ -5326,7 +5494,7 @@
                         "vibrate"
                       ],
                       "default": "magic",
-                      "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan, incoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
+                      "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan,\n\tincoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
                     },
                     "priority": {
                       "type": "number",
@@ -5336,7 +5504,7 @@
                     "retry": {
                       "type": "number",
                       "default": 30,
-                      "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60) "
+                      "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60)"
                     },
                     "expire": {
                       "type": "number",
@@ -5347,6 +5515,11 @@
                       "type": "string",
                       "default": "NoCloud Robo1",
                       "description": "Add a custom ID at the beginning of the message title (subject)."
+                    },
+                    "url": {
+                      "type": "string",
+                      "default": "http://127.0.0.1/",
+                      "description": "URL added to the message - link to this Robot NoCloud implementation."
                     },
                     "rateLimit": {
                       "type": "number",
@@ -5360,12 +5533,12 @@
                     },
                     "pushEvents": {
                       "type": "boolean",
-                      "default": "false",
+                      "default": false,
                       "description": "Controls if the NoCloud Events are forwarded or not"
                     },
                     "processEvents": {
                       "type": "boolean",
-                      "default": "false",
+                      "default": false,
                       "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
                     }
                   }
@@ -5398,6 +5571,7 @@
                   "retry",
                   "expire",
                   "titleID",
+                  "url",
                   "rateLimit",
                   "rateLimitTime",
                   "pushEvents",
@@ -5406,13 +5580,13 @@
                 "properties": {
                   "enabled": {
                     "type": "boolean",
-                    "default": "false",
+                    "default": false,
                     "description": "Controls the status of NoCloud Push Notifications Connectivity"
                   },
                   "server": {
                     "type": "string",
                     "default": "api.pushover.net",
-                    "description": "Can be either an IP or a FQDN"
+                    "description": "Can be either an IPv4 or a FQDN"
                   },
                   "path": {
                     "type": "string",
@@ -5426,10 +5600,12 @@
                   },
                   "token": {
                     "type": "string",
+                    "default": "1234567890abcdefghijABCDEFGHIJ",
                     "description": "Push Notifications Application API Token/Key (30 characters)"
                   },
                   "user": {
                     "type": "string",
+                    "default": "abcdefghij1234567890ABCDEFGHIJ",
                     "description": "Push Notification User API Key (30 characters)"
                   },
                   "sound": {
@@ -5460,7 +5636,7 @@
                       "vibrate"
                     ],
                     "default": "magic",
-                    "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan, incoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
+                    "description": "Push Notification Sound.\nValues: none (None – silent), alien (Alien Alarm – long), bike, bugle, cashregister (Cash Register), classical, climb (long), cosmic, echo (Pushover Echo – long), falling, gamelan,\n\tincoming, intermission, magic, mechanical, persistent (long), pianobar (Piano Bar), pushover (default), siren, spacealarm (Space Alarm), tugboat (Tug Boat), updown (long), vibrate (Vibrate Only)"
                   },
                   "priority": {
                     "type": "number",
@@ -5470,7 +5646,7 @@
                   "retry": {
                     "type": "number",
                     "default": 30,
-                    "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60) "
+                    "description": "Push Notification Emergency (priority: 2) seconds to retry (30 - 10x60)"
                   },
                   "expire": {
                     "type": "number",
@@ -5481,6 +5657,11 @@
                     "type": "string",
                     "default": "NoCloud Robo1",
                     "description": "Add a custom ID at the beginning of the message title (subject)."
+                  },
+                  "url": {
+                    "type": "string",
+                    "default": "http://127.0.0.1/",
+                    "description": "URL added to the message - link to this Robot NoCloud implementation."
                   },
                   "rateLimit": {
                     "type": "number",
@@ -5494,12 +5675,12 @@
                   },
                   "pushEvents": {
                     "type": "boolean",
-                    "default": "false",
+                    "default": false,
                     "description": "Controls if the NoCloud Events are forwarded or not"
                   },
                   "processEvents": {
                     "type": "boolean",
-                    "default": "false",
+                    "default": false,
                     "description": "Controls if the forwarded NoCloud Events are cleared (processed)"
                   }
                 }
@@ -5519,6 +5700,7 @@
                     "retry": 30,
                     "expire": 600,
                     "titleID": "Robot1",
+                    "url": "http://127.0.0.1/",
                     "rateLimit": 5,
                     "rateLimitTime": 60000,
                     "pushEvents": false,

@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-21T03:58:35.050Z)
+## NoCloud nightly (2026-01-24T03:09:06.971Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -7,6 +7,7 @@
 
 ### Features
 
+- **Core**: Add URL option for messages sent with PushNotifications [`a8de1f6`](https://github.com/DGAlexandru/NoCloud/commit/a8de1f6ce74dc0a5d65a50b2857417eb4adededb)
 - **Vendor.Dreame**: MapSegmentMaterialControlCapability [`a06f03c`](https://github.com/DGAlexandru/NoCloud/commit/a06f03ca0c6cc612b7fa66c6ce9f5205bd7a5a25)
 - **UI**: MapSegmentMaterialControlCapability [`ad0f0f1`](https://github.com/DGAlexandru/NoCloud/commit/ad0f0f1c3541fa63a0937ce843cc38f9567a91a3)
 - **Core**: MapSegmentMaterialControlCapability [`8cb63ad`](https://github.com/DGAlexandru/NoCloud/commit/8cb63ad526b9d52f8ecc5988f2dc34b7cdd6425f)
@@ -58,6 +59,7 @@
 
 ### Refactoring
 
+- **Core**: Configuration is now validated and repaired using only OpenAPI schema configuration [`6aabd94`](https://github.com/DGAlexandru/NoCloud/commit/6aabd94b987e38d1767e47c8906e1878a73b2618)
 - **WebServer**: Resource not found - 404 pages [`542c091`](https://github.com/DGAlexandru/NoCloud/commit/542c091630fc1d9d40d14dd6729fc2fab4df92c2)
 - **UI**: MapLayer color handling cleanup [`0cdcf2f`](https://github.com/DGAlexandru/NoCloud/commit/0cdcf2f6a1f77aea26bda730fc6fd2dc4504b1bd)
 - **Vendor.Dreame**: DreameUtil module - serialize / deserialize more clear; adding more AI Camera Settings plus helpers to optimize enabling/disabling its flags [`532d31c`](https://github.com/DGAlexandru/NoCloud/commit/532d31cda4fc9a671bd3b1a91482d1f6c7939807)
