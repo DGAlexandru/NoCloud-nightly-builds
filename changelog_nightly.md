@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-24T03:09:06.971Z)
+## NoCloud nightly (2026-01-25T23:01:28.524Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -7,6 +7,11 @@
 
 ### Features
 
+- **UI**: Improve map icons [`18b2490`](https://github.com/DGAlexandru/NoCloud/commit/18b2490fa675cecffd64ba6b388f45096203b762)
+- **Vendor.Roborock**: Migrating from Quirks to Capability: Floor Material Direction Aware Navigation and also Map Segment Material [`bdce6f2`](https://github.com/DGAlexandru/NoCloud/commit/bdce6f2c94c2fac822cdd8fd795547cfdca04275)
+- **Vendor.Dreame**: Migrating from Quirks to Capability: Floor Material Direction Aware Navigation (MaterialDirectionClean) [`bb29f94`](https://github.com/DGAlexandru/NoCloud/commit/bb29f944c74913a747b81ac59700183fb7ba3842)
+- **UI**: FloorMaterialDirectionAwareNavigationControlCapability [`2afc46b`](https://github.com/DGAlexandru/NoCloud/commit/2afc46b556b6c40c723c02a3c9c69eb79bbfeb42)
+- **Core**: FloorMaterialDirectionAwareNavigationControlCapability [`cd1bfae`](https://github.com/DGAlexandru/NoCloud/commit/cd1bfae5ffef36751c062e87fb949e18c41c3d9a)
 - **Core**: Add URL option for messages sent with PushNotifications [`a8de1f6`](https://github.com/DGAlexandru/NoCloud/commit/a8de1f6ce74dc0a5d65a50b2857417eb4adededb)
 - **Vendor.Dreame**: MapSegmentMaterialControlCapability [`a06f03c`](https://github.com/DGAlexandru/NoCloud/commit/a06f03ca0c6cc612b7fa66c6ce9f5205bd7a5a25)
 - **UI**: MapSegmentMaterialControlCapability [`ad0f0f1`](https://github.com/DGAlexandru/NoCloud/commit/ad0f0f1c3541fa63a0937ce843cc38f9567a91a3)
@@ -35,6 +40,9 @@
 
 ### Fixes
 
+- **Vendor.Dreame**: Allow the firmware to process the new setting - MopExtension, MopGap and MopTwistFrequency [`53b757a`](https://github.com/DGAlexandru/NoCloud/commit/53b757a913eba8ab5def61bafa994d45b61cf6bb)
+- **Vendor.Dreame**: Fix Auto Empty Dock Auto Empty Interval V1 [`7185021`](https://github.com/DGAlexandru/NoCloud/commit/71850210ddd76b6c146e4b0c0943d92f2331c217)
+- **MQTT**: Use new default_entity_id instead of deprecated object_id in autodiscovery [`5686d2d`](https://github.com/DGAlexandru/NoCloud/commit/5686d2d089eb54b84ef5c35d4d43491feb057ca0)
 - **Core**: Been here before.. Win vs. *nix .. case-insensitive vs sensitive :( [`c33b857`](https://github.com/DGAlexandru/NoCloud/commit/c33b85776e783ecda74d1b878e335daa018f9456)
 - **Vendor.Dreame**: Add missing extra materials: carpet, low & medium pile carpet to DreameMapParser [`9dceb81`](https://github.com/DGAlexandru/NoCloud/commit/9dceb816b0182e2c47a119f213ea8f3027ffae17)
 - **Vendor.Dreame**: Remove legacy payload for Manual Mop Clean Trigger that wasn't used by any current supported robots [`3552aa8`](https://github.com/DGAlexandru/NoCloud/commit/3552aa8e3b8c704881eb027f1088161c52c06de7)
