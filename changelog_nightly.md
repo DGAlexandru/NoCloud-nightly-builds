@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-25T23:01:28.524Z)
+## NoCloud nightly (2026-01-27T23:24:25.791Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -7,6 +7,7 @@
 
 ### Features
 
+- **Vendor.Dreame**: X30Ultra support [`314a75b`](https://github.com/DGAlexandru/NoCloud/commit/314a75b3651ecd2e178384abc736014d9eb37c12)
 - **UI**: Improve map icons [`18b2490`](https://github.com/DGAlexandru/NoCloud/commit/18b2490fa675cecffd64ba6b388f45096203b762)
 - **Vendor.Roborock**: Migrating from Quirks to Capability: Floor Material Direction Aware Navigation and also Map Segment Material [`bdce6f2`](https://github.com/DGAlexandru/NoCloud/commit/bdce6f2c94c2fac822cdd8fd795547cfdca04275)
 - **Vendor.Dreame**: Migrating from Quirks to Capability: Floor Material Direction Aware Navigation (MaterialDirectionClean) [`bb29f94`](https://github.com/DGAlexandru/NoCloud/commit/bb29f944c74913a747b81ac59700183fb7ba3842)
