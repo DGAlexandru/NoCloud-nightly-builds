@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-27T23:24:25.791Z)
+## NoCloud nightly (2026-01-28T20:58:01.001Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -41,6 +41,7 @@
 
 ### Fixes
 
+- **Core**: Add list of required top-level (root-level) properties in OpenAPI configuration schema [`e8c421e`](https://github.com/DGAlexandru/NoCloud/commit/e8c421ed0c6a804dc8418061ce75d6e7ea7da217)
 - **Vendor.Dreame**: Allow the firmware to process the new setting - MopExtension, MopGap and MopTwistFrequency [`53b757a`](https://github.com/DGAlexandru/NoCloud/commit/53b757a913eba8ab5def61bafa994d45b61cf6bb)
 - **Vendor.Dreame**: Fix Auto Empty Dock Auto Empty Interval V1 [`7185021`](https://github.com/DGAlexandru/NoCloud/commit/71850210ddd76b6c146e4b0c0943d92f2331c217)
 - **MQTT**: Use new default_entity_id instead of deprecated object_id in autodiscovery [`5686d2d`](https://github.com/DGAlexandru/NoCloud/commit/5686d2d089eb54b84ef5c35d4d43491feb057ca0)
