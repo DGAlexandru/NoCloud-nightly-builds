@@ -1,4 +1,4 @@
-## NoCloud nightly (2026-01-28T20:58:01.001Z)
+## NoCloud nightly (2026-02-03T00:53:01.234Z)
 ### Breaking Changes
 
 - Drop ConsumableStateAttribute in favor of NoCloudConsumable entity [`9404491`](https://github.com/DGAlexandru/NoCloud/commit/9404491ef8dc8dddbe65c24619c42a71df8724a8)
@@ -7,6 +7,28 @@
 
 ### Features
 
+- **Vendor.Dreame**: Implement CleanCarpetsFirst ControlCapability [`0aca9f2`](https://github.com/DGAlexandru/NoCloud/commit/0aca9f234f34f9bca1a111258dacf8bb4afc6ede)
+- **UI**: Add CleanCarpetsFirstControlCapability [`4d36e59`](https://github.com/DGAlexandru/NoCloud/commit/4d36e5982a8b864b813db7f2dbd5de49470ec0c1)
+- **Core**: Add CleanCarpetsFirstControlCapability [`766db1f`](https://github.com/DGAlexandru/NoCloud/commit/766db1fdbe011daf27934934a09914c45112cc39)
+- **Vendor.Dreame**: Map error codes 82 and 98 [`d61c1df`](https://github.com/DGAlexandru/NoCloud/commit/d61c1df5e13e48cbe2cd2e67d51360a000e1545c)
+- **Vendor.Dreame**: Implement DockComponentStateAttribute [`51c05f2`](https://github.com/DGAlexandru/NoCloud/commit/51c05f2031b582fcb6439709039d9717bb8eda7c)
+- **UI**: DockComponentStateAttribute [`7c442f9`](https://github.com/DGAlexandru/NoCloud/commit/7c442f9fd8d77d3cfa47055727ed7e83d19ec563)
+- **Core**: DockComponentStateAttribute [`07797c7`](https://github.com/DGAlexandru/NoCloud/commit/07797c7323a382b8ffe06fa256a9a0cf75f32f84)
+- **Vendor.RoboRock**: Migrating from Quirks to Capability:  AutoEmptyDockAutoEmptyDuration [`65011e5`](https://github.com/DGAlexandru/NoCloud/commit/65011e590a30387e2a8d624b1553213c064f1db5)
+- **UI**: AutoEmptyDockAutoEmptyDurationControlCapability [`4515603`](https://github.com/DGAlexandru/NoCloud/commit/4515603ae2133031bd79bb3994bf52b7c80eae42)
+- **Core**: AutoEmptyDockAutoEmptyDurationControlCapability [`fee2086`](https://github.com/DGAlexandru/NoCloud/commit/fee2086af78299790730acc1bab9c970ce2c76a0)
+- **Vendor.RoboRock**: Migrating from Quirks to Capability: MopPadsAuto-Drying and MopPadsDryingTime [`64a1845`](https://github.com/DGAlexandru/NoCloud/commit/64a18452ad125fb441c35197070923660e29af8e)
+- **Vendor.Dreame**: Migrating from Quirks to Capability: Mop Pads Drying Time [`9814fbd`](https://github.com/DGAlexandru/NoCloud/commit/9814fbd77761f6fec6f8d5e1baabc29632938235)
+- **UI**: MopDockMopDryingTimeControlCapability [`d176cb8`](https://github.com/DGAlexandru/NoCloud/commit/d176cb89035db7ae3e9f14607faf96272b62476d)
+- **Core**: MopDockMopDryingTimeControlCapability [`4430782`](https://github.com/DGAlexandru/NoCloud/commit/4430782d20206c7282a2ea35977617c7912ac541)
+- **Vendor.Viomi**: Migrating from Quirks to Capability: Clean Route [`349ec0d`](https://github.com/DGAlexandru/NoCloud/commit/349ec0d897ccc3438cd287bc8f4d7df40cde6973)
+- **Vendor.RoboRock**: Migrating from Quirks to Capability: Clean Route [`c5b208c`](https://github.com/DGAlexandru/NoCloud/commit/c5b208c9d1a514216eccf98e6cf5389aa10aaa1d)
+- **Core**: Add MopTightPatternControlCapability [`dc80f8a`](https://github.com/DGAlexandru/NoCloud/commit/dc80f8ab26d62d14b5f5edd575306f083e73f0d4)
+- **Vendor.Dreame**: Migrating from Quirks to Capability: Tight Mop Pattern and Clean Route [`ff4de5f`](https://github.com/DGAlexandru/NoCloud/commit/ff4de5fa7993bb65ac2f573cea05126bca8c07ef)
+- **UI**: Add MopTightPatternControlCapability [`6dee2e2`](https://github.com/DGAlexandru/NoCloud/commit/6dee2e2dcf19e1a2a4db172a9fe305397b896117)
+- **UI**: Add CleanRouteControlCapability [`61f428f`](https://github.com/DGAlexandru/NoCloud/commit/61f428f99658a9913ff95215d210df0a91de68f0)
+- **Core**: Add CleanRouteControlCapability [`eae1d6d`](https://github.com/DGAlexandru/NoCloud/commit/eae1d6df517f74e6666046ee3a0ca8787e9f22a9)
+- **UI**: Add Carpet type rendering for floor material in MapSegmentMaterial [`5da0d6b`](https://github.com/DGAlexandru/NoCloud/commit/5da0d6ba71bd5740f912639e5703e7e695ca1671)
 - **Vendor.Dreame**: X30Ultra support [`314a75b`](https://github.com/DGAlexandru/NoCloud/commit/314a75b3651ecd2e178384abc736014d9eb37c12)
 - **UI**: Improve map icons [`18b2490`](https://github.com/DGAlexandru/NoCloud/commit/18b2490fa675cecffd64ba6b388f45096203b762)
 - **Vendor.Roborock**: Migrating from Quirks to Capability: Floor Material Direction Aware Navigation and also Map Segment Material [`bdce6f2`](https://github.com/DGAlexandru/NoCloud/commit/bdce6f2c94c2fac822cdd8fd795547cfdca04275)
@@ -41,6 +63,8 @@
 
 ### Fixes
 
+- **Vendor.RoboRock**: Fix initialization of supportedAttachments after refactor [`9092025`](https://github.com/DGAlexandru/NoCloud/commit/9092025b3452bd872e5ec738539377d12d7ae183)
+- **Vendor.RoboRock**: RoboRock S4 model doesn't support Carpet Mode [`840a9c9`](https://github.com/DGAlexandru/NoCloud/commit/840a9c9bc7673ec57318a1b18d5a5d71139ac847)
 - **Core**: Add list of required top-level (root-level) properties in OpenAPI configuration schema [`e8c421e`](https://github.com/DGAlexandru/NoCloud/commit/e8c421ed0c6a804dc8418061ce75d6e7ea7da217)
 - **Vendor.Dreame**: Allow the firmware to process the new setting - MopExtension, MopGap and MopTwistFrequency [`53b757a`](https://github.com/DGAlexandru/NoCloud/commit/53b757a913eba8ab5def61bafa994d45b61cf6bb)
 - **Vendor.Dreame**: Fix Auto Empty Dock Auto Empty Interval V1 [`7185021`](https://github.com/DGAlexandru/NoCloud/commit/71850210ddd76b6c146e4b0c0943d92f2331c217)
@@ -69,6 +93,7 @@
 
 ### Refactoring
 
+- **Core**: Pull initialization of supportedAttachments into NoCloudRobot base class [`217c1e4`](https://github.com/DGAlexandru/NoCloud/commit/217c1e4b9dd99a3efee69c8f721a136dce5d9ff2)
 - **Core**: Configuration is now validated and repaired using only OpenAPI schema configuration [`6aabd94`](https://github.com/DGAlexandru/NoCloud/commit/6aabd94b987e38d1767e47c8906e1878a73b2618)
 - **WebServer**: Resource not found - 404 pages [`542c091`](https://github.com/DGAlexandru/NoCloud/commit/542c091630fc1d9d40d14dd6729fc2fab4df92c2)
 - **UI**: MapLayer color handling cleanup [`0cdcf2f`](https://github.com/DGAlexandru/NoCloud/commit/0cdcf2f6a1f77aea26bda730fc6fd2dc4504b1bd)
@@ -85,6 +110,7 @@
 
 ### Chores
 
+- Bump and reduce dependencies [`e25a6a6`](https://github.com/DGAlexandru/NoCloud/commit/e25a6a6e513a94f37cc940b9b0883c2feba564cd)
 - **Build**: Update dependencies, fix backend testing [`ef7576b`](https://github.com/DGAlexandru/NoCloud/commit/ef7576b142041663bc8d49e3ba7d65e02bf9ab74)
 - **BuildTools**: Fixing ESLint warnings - groups not sorted, mainly [`063f9e1`](https://github.com/DGAlexandru/NoCloud/commit/063f9e18c6eedc1edaafd97b7f8734e186884cc4)
 - **BuildTools**: Migrating NightlyBuilds from "master" branch to "main" branch, to be in sync with GitHub recommendations [`4d334a3`](https://github.com/DGAlexandru/NoCloud/commit/4d334a3da0230c8146b7d1ffaa5ce405d681d40e)

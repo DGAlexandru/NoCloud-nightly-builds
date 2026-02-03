@@ -3616,6 +3616,144 @@
           }
         ]
       },
+      "DockComponentStateAttribute": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "__class": {
+                        "type": "string"
+                      },
+                      "metaData": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "subType": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "water_tank_clean",
+                  "water_tank_dirty",
+                  "dustbag",
+                  "detergent"
+                ]
+              },
+              "value": {
+                "type": "string",
+                "enum": [
+                  "ok",
+                  "missing",
+                  "empty",
+                  "full",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "DockComponentStateAttributeType": {
+        "type": "string",
+        "enum": [
+          "water_tank_clean",
+          "water_tank_dirty",
+          "dustbag",
+          "detergent"
+        ]
+      },
+      "DockComponentStateAttributeValue": {
+        "type": "string",
+        "enum": [
+          "ok",
+          "missing",
+          "empty",
+          "full",
+          "unknown"
+        ]
+      },
+      "DockStatusStateAttribute": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "__class": {
+                        "type": "string"
+                      },
+                      "metaData": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "subType": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "idle",
+                  "pause",
+                  "emptying",
+                  "cleaning",
+                  "drying"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "DockStatusStateAttributeValue": {
+        "type": "string",
+        "enum": [
+          "error",
+          "idle",
+          "pause",
+          "emptying",
+          "cleaning",
+          "drying"
+        ]
+      },
       "PresetSelectionStateAttribute": {
         "allOf": [
           {
@@ -3711,6 +3849,99 @@
               }
             ]
           }
+        ]
+      },
+      "StatusStateAttribute": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "__class": {
+                        "type": "string"
+                      },
+                      "metaData": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "subType": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "docked",
+                  "idle",
+                  "returning",
+                  "cleaning",
+                  "paused",
+                  "manual_control",
+                  "moving"
+                ]
+              },
+              "flag": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "zone",
+                  "segment",
+                  "spot",
+                  "target",
+                  "resumable",
+                  "mapping"
+                ]
+              },
+              "error": {
+                "description": "Only present if the value is 'error'.",
+                "type": "object"
+              }
+            }
+          }
+        ]
+      },
+      "StatusStateAttributeValue": {
+        "type": "string",
+        "enum": [
+          "error",
+          "docked",
+          "idle",
+          "returning",
+          "cleaning",
+          "paused",
+          "manual_control",
+          "moving"
+        ]
+      },
+      "StatusStateAttributeFlag": {
+        "type": "string",
+        "enum": [
+          "none",
+          "zone",
+          "segment",
+          "spot",
+          "target",
+          "resumable",
+          "mapping"
         ]
       },
       "NoCloudManualControlMovementCommandType": {
@@ -5768,6 +5999,19 @@
                               "mop"
                             ]
                           }
+                        },
+                        "supportedDockComponents": {
+                          "type": "array",
+                          "description": "Dock components that are detected and reported by the robot",
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "water_tank_clean",
+                              "water_tank_dirty",
+                              "dustbag",
+                              "detergent"
+                            ]
+                          }
                         }
                       }
                     },
@@ -5961,6 +6205,114 @@
                                   "type": {
                                     "type": "string",
                                     "enum": [
+                                      "water_tank_clean",
+                                      "water_tank_dirty",
+                                      "dustbag",
+                                      "detergent"
+                                    ]
+                                  },
+                                  "value": {
+                                    "type": "string",
+                                    "enum": [
+                                      "ok",
+                                      "missing",
+                                      "empty",
+                                      "full",
+                                      "unknown"
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "allOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "allOf": [
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "__class": {
+                                            "type": "string"
+                                          },
+                                          "metaData": {
+                                            "type": "object"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "type": {
+                                            "type": "string"
+                                          },
+                                          "subType": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "enum": [
+                                      "error",
+                                      "idle",
+                                      "pause",
+                                      "emptying",
+                                      "cleaning",
+                                      "drying"
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "allOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "allOf": [
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "__class": {
+                                            "type": "string"
+                                          },
+                                          "metaData": {
+                                            "type": "object"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "type": {
+                                            "type": "string"
+                                          },
+                                          "subType": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
                                       "fan_speed",
                                       "water_grade",
                                       "operation_mode"
@@ -5985,6 +6337,74 @@
                                   },
                                   "customValue": {
                                     "type": "number"
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "allOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "allOf": [
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "__class": {
+                                            "type": "string"
+                                          },
+                                          "metaData": {
+                                            "type": "object"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "type": {
+                                            "type": "string"
+                                          },
+                                          "subType": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "enum": [
+                                      "error",
+                                      "docked",
+                                      "idle",
+                                      "returning",
+                                      "cleaning",
+                                      "paused",
+                                      "manual_control",
+                                      "moving"
+                                    ]
+                                  },
+                                  "flag": {
+                                    "type": "string",
+                                    "enum": [
+                                      "none",
+                                      "zone",
+                                      "segment",
+                                      "spot",
+                                      "target",
+                                      "resumable",
+                                      "mapping"
+                                    ]
+                                  },
+                                  "error": {
+                                    "description": "Only present if the value is 'error'.",
+                                    "type": "object"
                                   }
                                 }
                               }
@@ -6454,6 +6874,114 @@
                               "type": {
                                 "type": "string",
                                 "enum": [
+                                  "water_tank_clean",
+                                  "water_tank_dirty",
+                                  "dustbag",
+                                  "detergent"
+                                ]
+                              },
+                              "value": {
+                                "type": "string",
+                                "enum": [
+                                  "ok",
+                                  "missing",
+                                  "empty",
+                                  "full",
+                                  "unknown"
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "allOf": [
+                          {
+                            "allOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "__class": {
+                                        "type": "string"
+                                      },
+                                      "metaData": {
+                                        "type": "object"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "subType": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "value": {
+                                "type": "string",
+                                "enum": [
+                                  "error",
+                                  "idle",
+                                  "pause",
+                                  "emptying",
+                                  "cleaning",
+                                  "drying"
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "allOf": [
+                          {
+                            "allOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "__class": {
+                                        "type": "string"
+                                      },
+                                      "metaData": {
+                                        "type": "object"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "subType": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
                                   "fan_speed",
                                   "water_grade",
                                   "operation_mode"
@@ -6478,6 +7006,74 @@
                               },
                               "customValue": {
                                 "type": "number"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "allOf": [
+                          {
+                            "allOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "__class": {
+                                        "type": "string"
+                                      },
+                                      "metaData": {
+                                        "type": "object"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "subType": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "value": {
+                                "type": "string",
+                                "enum": [
+                                  "error",
+                                  "docked",
+                                  "idle",
+                                  "returning",
+                                  "cleaning",
+                                  "paused",
+                                  "manual_control",
+                                  "moving"
+                                ]
+                              },
+                              "flag": {
+                                "type": "string",
+                                "enum": [
+                                  "none",
+                                  "zone",
+                                  "segment",
+                                  "spot",
+                                  "target",
+                                  "resumable",
+                                  "mapping"
+                                ]
+                              },
+                              "error": {
+                                "description": "Only present if the value is 'error'.",
+                                "type": "object"
                               }
                             }
                           }
@@ -8390,6 +8986,105 @@
         }
       }
     },
+    "/api/v2/robot/capabilities/AutoEmptyDockAutoEmptyDurationControlCapability": {
+      "get": {
+        "tags": [
+          "AutoEmptyDockAutoEmptyDurationControlCapability"
+        ],
+        "summary": "Get current Auto Empty Dock Auto Empty Duration",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "duration": {
+                      "type": "string",
+                      "enum": [
+                        "auto",
+                        "short",
+                        "medium",
+                        "long"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AutoEmptyDockAutoEmptyDurationControlCapability"
+        ],
+        "summary": "Set Auto Empty Dock Auto Empty Duration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "duration": {
+                    "type": "string",
+                    "enum": [
+                      "auto",
+                      "short",
+                      "medium",
+                      "long"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/AutoEmptyDockAutoEmptyDurationControlCapability/properties": {
+      "get": {
+        "tags": [
+          "AutoEmptyDockAutoEmptyDurationControlCapability"
+        ],
+        "summary": "Get various capability-related properties",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "supportedDurations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "auto",
+                          "short",
+                          "medium",
+                          "long"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/robot/capabilities/AutoEmptyDockAutoEmptyIntervalControlCapability": {
       "get": {
         "tags": [
@@ -8717,6 +9412,129 @@
                           "lift",
                           "detach",
                           "cross"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/CleanRouteControlCapability": {
+      "get": {
+        "tags": [
+          "CleanRouteControlCapability"
+        ],
+        "summary": "Get current clean route",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "route": {
+                      "type": "string",
+                      "enum": [
+                        "normal",
+                        "quick",
+                        "intensive",
+                        "deep"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CleanRouteControlCapability"
+        ],
+        "summary": "Set clean route",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "route": {
+                    "type": "string",
+                    "enum": [
+                      "normal",
+                      "quick",
+                      "intensive",
+                      "deep"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/CleanRouteControlCapability/properties": {
+      "get": {
+        "tags": [
+          "CleanRouteControlCapability"
+        ],
+        "summary": "Get various capability-related properties",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "supportedRoutes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "normal",
+                          "quick",
+                          "intensive",
+                          "deep"
+                        ]
+                      }
+                    },
+                    "mopOnly": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "normal",
+                          "quick",
+                          "intensive",
+                          "deep"
+                        ]
+                      }
+                    },
+                    "oneTime": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "normal",
+                          "quick",
+                          "intensive",
+                          "deep"
                         ]
                       }
                     }
@@ -11057,6 +11875,108 @@
         }
       }
     },
+    "/api/v2/robot/capabilities/MopDockMopDryingTimeControlCapability": {
+      "get": {
+        "tags": [
+          "MopDockMopDryingTimeControlCapability"
+        ],
+        "summary": "Get current Mop Dock Mop Drying Time",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "duration": {
+                      "type": "string",
+                      "enum": [
+                        "1h",
+                        "2h",
+                        "3h",
+                        "4h",
+                        "cold"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MopDockMopDryingTimeControlCapability"
+        ],
+        "summary": "Set Mop Dock Mop Drying Time",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "duration": {
+                    "type": "string",
+                    "enum": [
+                      "1h",
+                      "2h",
+                      "3h",
+                      "4h",
+                      "cold"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/MopDockMopDryingTimeControlCapability/properties": {
+      "get": {
+        "tags": [
+          "MopDockMopDryingTimeControlCapability"
+        ],
+        "summary": "Get various capability-related properties",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "supportedDurations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "1h",
+                          "2h",
+                          "3h",
+                          "4h",
+                          "cold"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/robot/capabilities/MopDockMopWashTemperatureControlCapability": {
       "get": {
         "tags": [
@@ -11973,6 +12893,83 @@
         }
       }
     },
+    "/api/v2/robot/capabilities/CleanCarpetsFirstControlCapability": {
+      "get": {
+        "tags": [
+          "CleanCarpetsFirstControlCapability"
+        ],
+        "summary": "Get Clean Carpets First setting",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CleanCarpetsFirstControlCapability"
+        ],
+        "summary": "Set Clean Carpets First setting",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "enable",
+                      "disable"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/CleanCarpetsFirstControlCapability/properties": {
+      "get": {
+        "tags": [
+          "CleanCarpetsFirstControlCapability"
+        ],
+        "summary": "Get various capability-related properties",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/robot/capabilities/CollisionAvoidantNavigationControlCapability": {
       "get": {
         "tags": [
@@ -12496,6 +13493,83 @@
       "get": {
         "tags": [
           "MopGapControlCapability"
+        ],
+        "summary": "Get various capability-related properties",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/MopTightPatternControlCapability": {
+      "get": {
+        "tags": [
+          "MopTightPatternControlCapability"
+        ],
+        "summary": "Get Mop Tight Pattern setting",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MopTightPatternControlCapability"
+        ],
+        "summary": "Set Mop Tight Pattern setting",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "enable",
+                      "disable"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/MopTightPatternControlCapability/properties": {
+      "get": {
+        "tags": [
+          "MopTightPatternControlCapability"
         ],
         "summary": "Get various capability-related properties",
         "responses": {
