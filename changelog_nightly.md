@@ -1,4 +1,8 @@
-## NoCloud nightly (2026-02-03T04:29:56.055Z)
+## NoCloud nightly (2026-02-04T01:02:32.783Z)
+
+### Refactoring
+
+- **UI**: Code consolidation for SimpleToggle Capabilities on frontend - easier to maintain & add new ones <a href="https://github.com/DGAlexandru/NoCloud/commit/18a05b3ddb894e7768d6a178c22dcd6ea8c19ad5" target="_blank" rel="noopener noreferrer nofollow">`18a05b3`</a>
 
 ### Chores
 

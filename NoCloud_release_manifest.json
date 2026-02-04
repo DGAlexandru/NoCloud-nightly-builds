@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-02-03T04:29:56.240Z",
-  "version": "ab1310f6f39ef783abfe2dd45c067da08ff571ce",
+  "timestamp": "2026-02-04T01:02:32.970Z",
+  "version": "18a05b3ddb894e7768d6a178c22dcd6ea8c19ad5",
   "sha256sums": {
-    "NoCloud-armv7": "1a10fa9a4bac3abcedf5e4b399a4ea5cd4b397ba39619e83199e4a5e7e9eaf20",
-    "NoCloud-armv7-lowmem": "9d77927267393fe72ebf78902c2751d0b6fc0de0557af4a6d473f1bd9bdeff75",
-    "NoCloud-aarch64": "224894362f8788db6fb861655f9757062c2119f126ab02a37b8ffea2ae3a6454",
-    "NoCloud-armv7.upx": "ace277022173573216b62dc0ae32046c907bc9b3440ef5a971d532bbf2ef995c",
-    "NoCloud-armv7-lowmem.upx": "f9cbe04057e77e9104701b0c2225c2f00fc1bf2e47b50156c6184551bf68747b",
-    "NoCloud-aarch64.upx": "1ec376f7d9529bea08aed7d0f5e8fe8feb77657e838757cfe2d2c0b0b3c59022"
+    "NoCloud-armv7": "042b2cf2f2ae7ce9d17ad3f2967cc35a8b242ffd7e1bd0d8c0b8b592546728ff",
+    "NoCloud-armv7-lowmem": "b3bc1fa8689cc7eb4685d44c7276d440bc5b0bec7ef159b9952a1f3e55b96899",
+    "NoCloud-aarch64": "89cdebcfaccff0ddb46905143b7c42e836cbc5bd9ddf159cf08ebb5eb25b7244",
+    "NoCloud-armv7.upx": "81716b034ccdcba3f1bbb2d280c4b6b5dfe6744c26692e85bffc3b1a6df7f081",
+    "NoCloud-armv7-lowmem.upx": "9eea868a25c0cb5521fa06076032d75444876ffa64684145325beb313d5a0134",
+    "NoCloud-aarch64.upx": "a2a3ca1988679895174bdb5848d293c2b4d71a1cce3d7301418fdc26a9ffee4b"
   },
-  "changelog": "## NoCloud nightly (2026-02-03T04:29:56.055Z)\n\n### Chores\n\n- **BuildTools**: Generate ChangeLog with links that open in another tab / window. <a href=\"https://github.com/DGAlexandru/NoCloud/commit/ab1310f6f39ef783abfe2dd45c067da08ff571ce\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">`ab1310f`</a>\n"
+  "changelog": "## NoCloud nightly (2026-02-04T01:02:32.783Z)\n\n### Refactoring\n\n- **UI**: Code consolidation for SimpleToggle Capabilities on frontend - easier to maintain & add new ones <a href=\"https://github.com/DGAlexandru/NoCloud/commit/18a05b3ddb894e7768d6a178c22dcd6ea8c19ad5\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">`18a05b3`</a>\n\n### Chores\n\n- **BuildTools**: Generate ChangeLog with links that open in another tab / window. <a href=\"https://github.com/DGAlexandru/NoCloud/commit/ab1310f6f39ef783abfe2dd45c067da08ff571ce\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">`ab1310f`</a>\n"
 }
