@@ -1,0 +1,38 @@
+name: Truncate Selected Branch History
+
+on:
+  workflow_dispatch: # Allows manual trigger and branch selection from the Web UI
+
+jobs:
+  truncate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to allow force-pushing
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }} # Explicitly check out the chosen branch
+          fetch-depth: 0
+
+      - name: Reset Git History for Active Branch
+        run: |
+          # 1. Identify the running branch dynamically
+          TARGET_BRANCH="${{ github.ref_name }}"
+          echo "Cleaning up branch: $TARGET_BRANCH"
+          
+          # 2. Configure git bot credentials
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          
+          # 3. Create a parentless orphan branch keeping current files
+          git checkout --orphan temp_clean_branch
+          git add -A
+          git commit -m "Automated Cleanup: Retaining only latest binaries for $TARGET_BRANCH"
+          
+          # 4. Delete local reference to target branch and rename temp branch to match
+          git branch -D "$TARGET_BRANCH"
+          git branch -m "$TARGET_BRANCH"
+          
+          # 5. Overwrite the remote history on GitHub
+          git push origin "$TARGET_BRANCH" --force
