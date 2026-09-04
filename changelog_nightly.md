@@ -1,10 +1,14 @@
-## NoCloud nightly (2026-09-03T22:45:46.369Z)
+## NoCloud nightly (2026-09-04T16:39:13.669Z)
 ### Breaking Changes
 
 - **MQTT**: Room cleaning for HA 2026.5 and up & Fix deprecation of battery feature for vacuum entity starting with HA 2025.8 <a href="https://github.com/DGAlexandru/NoCloud/commit/ddbe38f7c36cec39db0c7a1af98e6c7a23afdcb0" target="_blank" rel="noopener noreferrer nofollow">`ddbe38f`</a>
 
 ### Features
 
+- **UI**: Add DustStreaming option - Remote Video Access <a href="https://github.com/DGAlexandru/NoCloud/commit/edaeb370b4dc668fe2b0999354cbe53fbf7fdc79" target="_blank" rel="noopener noreferrer nofollow">`edaeb37`</a>
+- **Vendor.RoboRock**: Add DustStreaming option - Remote Video Access <a href="https://github.com/DGAlexandru/NoCloud/commit/661c72f688bacac63edf61577e466252fe6d0311" target="_blank" rel="noopener noreferrer nofollow">`661c72f`</a>
+- **Vendor.Dreame**: Add DustStreaming option - Remote Video Access <a href="https://github.com/DGAlexandru/NoCloud/commit/890d6046ecf3afd0cd84802d83a0acae5a051c4c" target="_blank" rel="noopener noreferrer nofollow">`890d604`</a>
+- **Core**: Add DustStreaming option - Remote Video Access <a href="https://github.com/DGAlexandru/NoCloud/commit/7260162cd660995cc8f2fe9c456959224bc0329d" target="_blank" rel="noopener noreferrer nofollow">`7260162`</a>
 - **Vendor.Dreame**: Add MapAnnotations Capability <a href="https://github.com/DGAlexandru/NoCloud/commit/7b025edc75c7e2945941cc1dea3be7af8c76b687" target="_blank" rel="noopener noreferrer nofollow">`7b025ed`</a>
 - **UI**: Add MapAnnotations Capability <a href="https://github.com/DGAlexandru/NoCloud/commit/1373bca3bb7dfc9c3f8f24b4aac4844313aa19e9" target="_blank" rel="noopener noreferrer nofollow">`1373bca`</a>
 - **Core**: Add MapAnnotations Capability <a href="https://github.com/DGAlexandru/NoCloud/commit/bde8e06cceba81ac276a612d15dbaf21b8d013ad" target="_blank" rel="noopener noreferrer nofollow">`bde8e06`</a>
@@ -42,6 +46,7 @@
 
 ### Chores
 
+- **Release**: 2026.09.04 <a href="https://github.com/DGAlexandru/NoCloud/commit/d6b14e429931f0f5058bb8567c55b53facb3f643" target="_blank" rel="noopener noreferrer nofollow">`d6b14e4`</a>
 - **Vendor.Viomi**: Clean up unnecessary optional chaining <a href="https://github.com/DGAlexandru/NoCloud/commit/601f2ad12c78d2b7a38acd1b015ddf74c8bf5068" target="_blank" rel="noopener noreferrer nofollow">`601f2ad`</a>
 - **ChangeLog**: Fixing OCD take 2 :) <a href="https://github.com/DGAlexandru/NoCloud/commit/a66cfb717b89d493627f7c8dbc0b02ad22b41f99" target="_blank" rel="noopener noreferrer nofollow">`a66cfb7`</a>
 - **ChangeLog**: Fixing ... When OCD kicks in and you mess with the standard :) <a href="https://github.com/DGAlexandru/NoCloud/commit/9fe4e9737279b24d0a6412f024f696e610a25f60" target="_blank" rel="noopener noreferrer nofollow">`9fe4e97`</a>

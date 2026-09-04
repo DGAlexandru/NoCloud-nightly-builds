@@ -252,6 +252,7 @@
           "ntpClient",
           "networkAdvertisement",
           "updater",
+          "duststreaming",
           "timers",
           "logLevel",
           "debug",
@@ -750,6 +751,21 @@
                     "type": "object"
                   }
                 }
+              }
+            }
+          },
+          "duststreaming": {
+            "type": "object",
+            "description": "Remote video access",
+            "additionalProperties": false,
+            "required": [
+              "enabled"
+            ],
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "default": false,
+                "description": "Controls the status of NoCloud Streaming process"
               }
             }
           },
@@ -1254,6 +1270,21 @@
                 "type": "object"
               }
             }
+          }
+        }
+      },
+      "DuststreamingConfigDTO": {
+        "type": "object",
+        "description": "Remote video access",
+        "additionalProperties": false,
+        "required": [
+          "enabled"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "Controls the status of NoCloud Streaming process"
           }
         }
       },
@@ -5197,6 +5228,73 @@
                     "pattern": "^[a-zA-Z0-9 -]{0,24}$",
                     "description": "An optional user-defined friendly name for the NoCloud instance",
                     "default": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/api/v2/NoCloud/config/duststreaming": {
+      "get": {
+        "tags": [
+          "NoCloud"
+        ],
+        "summary": "Get duststreaming configuration",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Remote video access",
+                  "additionalProperties": false,
+                  "required": [
+                    "enabled"
+                  ],
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "Controls the status of NoCloud Streaming process"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "NoCloud"
+        ],
+        "summary": "Update duststreaming configuration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Remote video access",
+                "additionalProperties": false,
+                "required": [
+                  "enabled"
+                ],
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Controls the status of NoCloud Streaming process"
                   }
                 }
               }
@@ -10307,6 +10405,64 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/DuststreamingCapability/properties": {
+      "get": {
+        "tags": [
+          "DuststreamingCapability"
+        ],
+        "summary": "Get various capability-related properties",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "width": {
+                      "type": "number"
+                    },
+                    "height": {
+                      "type": "number"
+                    },
+                    "duststreamerInstalled": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/robot/capabilities/DuststreamingCapability/stream": {
+      "get": {
+        "tags": [
+          "DuststreamingCapability"
+        ],
+        "summary": "Get live camera stream",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "video/MP2T": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Duststreaming is disabled"
+          },
+          "503": {
+            "description": "Duststreamer missing"
           }
         }
       }
