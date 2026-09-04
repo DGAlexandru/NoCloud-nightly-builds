@@ -1,0 +1,51 @@
+## NoCloud nightly (2026-09-03T22:45:46.369Z)
+### Breaking Changes
+
+- **MQTT**: Room cleaning for HA 2026.5 and up & Fix deprecation of battery feature for vacuum entity starting with HA 2025.8 <a href="https://github.com/DGAlexandru/NoCloud/commit/ddbe38f7c36cec39db0c7a1af98e6c7a23afdcb0" target="_blank" rel="noopener noreferrer nofollow">`ddbe38f`</a>
+
+### Features
+
+- **Vendor.Dreame**: Add MapAnnotations Capability <a href="https://github.com/DGAlexandru/NoCloud/commit/7b025edc75c7e2945941cc1dea3be7af8c76b687" target="_blank" rel="noopener noreferrer nofollow">`7b025ed`</a>
+- **UI**: Add MapAnnotations Capability <a href="https://github.com/DGAlexandru/NoCloud/commit/1373bca3bb7dfc9c3f8f24b4aac4844313aa19e9" target="_blank" rel="noopener noreferrer nofollow">`1373bca`</a>
+- **Core**: Add MapAnnotations Capability <a href="https://github.com/DGAlexandru/NoCloud/commit/bde8e06cceba81ac276a612d15dbaf21b8d013ad" target="_blank" rel="noopener noreferrer nofollow">`bde8e06`</a>
+- **UI**: Reduce virtual restriction edit map button count using a unified add button <a href="https://github.com/DGAlexandru/NoCloud/commit/e5efcba33e85cc7d86dede7c1e5b4254931fb916" target="_blank" rel="noopener noreferrer nofollow">`e5efcba`</a>
+- **Vendor.Dreame**: Map 52 & 120 error codes. <a href="https://github.com/DGAlexandru/NoCloud/commit/a8f5036853e4d392fddbf30e9d24396d4a1daada" target="_blank" rel="noopener noreferrer nofollow">`a8f5036`</a>
+- **Vendor.Dreame**: Add FanSpeedTurbo ControlCapability <a href="https://github.com/DGAlexandru/NoCloud/commit/f6be8a87c5343d126ec82528e7d851960fcb3fdf" target="_blank" rel="noopener noreferrer nofollow">`f6be8a8`</a>
+- **UI**: Add FanSpeedTurbo ControlCapability <a href="https://github.com/DGAlexandru/NoCloud/commit/13995ad5deab9c349efc6bb865739c14f1f1811d" target="_blank" rel="noopener noreferrer nofollow">`13995ad`</a>
+- **Core**: Add FanSpeedTurbo ControlCapability <a href="https://github.com/DGAlexandru/NoCloud/commit/78e8e18ffb3c839aaa586267ae4734a874d716ec" target="_blank" rel="noopener noreferrer nofollow">`78e8e18`</a>
+- **Vendor.Dreame**: Migrating from Quirks to Capability: DeepCarpetCleaning ControlCapability <a href="https://github.com/DGAlexandru/NoCloud/commit/9b9b4798eec1b81455b6c2282084f710af375df9" target="_blank" rel="noopener noreferrer nofollow">`9b9b479`</a>
+- **UI**: Migrating from Quirks to Capability: DeepCarpetCleaning ControlCapability <a href="https://github.com/DGAlexandru/NoCloud/commit/b2476c6001cf475df17e317b92a8268045f1ea00" target="_blank" rel="noopener noreferrer nofollow">`b2476c6`</a>
+- **Core**: Migrating from Quirks to Capability: DeepCarpetCleaning ControlCapability <a href="https://github.com/DGAlexandru/NoCloud/commit/332c3b5500f660fc7c6d99012df7db5dd831f7a3" target="_blank" rel="noopener noreferrer nofollow">`332c3b5`</a>
+- **UI**: Robot WASD manual control <a href="https://github.com/DGAlexandru/NoCloud/commit/d691405afd1b8a07ea1669cfd131e19bde0fd586" target="_blank" rel="noopener noreferrer nofollow">`d691405`</a>
+- **Updater**: Allow force updating to the same version <a href="https://github.com/DGAlexandru/NoCloud/commit/d3f052fc77946cc171efabb3925334ba06e508b3" target="_blank" rel="noopener noreferrer nofollow">`d3f052f`</a>
+- **Core**: Add a reboot manager - Phoenix - to biblically accurate exception handling <a href="https://github.com/DGAlexandru/NoCloud/commit/73b8cb7a238edbcd6bb892fffd296ee1f1e6e1b8" target="_blank" rel="noopener noreferrer nofollow">`73b8cb7`</a>
+- **MQTT**: Publish Dock Component Status to MQTT <a href="https://github.com/DGAlexandru/NoCloud/commit/f2ae816dd476fcbea78cc9d857254f4da773ccc7" target="_blank" rel="noopener noreferrer nofollow">`f2ae816`</a>
+
+### Fixes
+
+- **Vendor.Dreame**: Try a different MapID when saving segment material to maybe fix reverting material settings <a href="https://github.com/DGAlexandru/NoCloud/commit/5bdb5855287c2cca139a09a5e5d7c9a97b49c578" target="_blank" rel="noopener noreferrer nofollow">`5bdb585`</a>
+- **Logging**: Demote Factory_Test - PIID 98 from WARN to DEBUG to reduce noise <a href="https://github.com/DGAlexandru/NoCloud/commit/abdd93503c17afbfd10c166a1c350554656bec49" target="_blank" rel="noopener noreferrer nofollow">`abdd935`</a>
+- **Vendor.Dreame**: The set of states that can be resumable extends beyond just Docked <a href="https://github.com/DGAlexandru/NoCloud/commit/f7d42f0809a0dd0aa38308e185423c4feef0cf7a" target="_blank" rel="noopener noreferrer nofollow">`f7d42f0`</a>
+- **Vendor.Dreame**: Misc Remote Control Command improvements <a href="https://github.com/DGAlexandru/NoCloud/commit/6ed10fc5d9aa344bf9ae316f1d4f92304a25ce05" target="_blank" rel="noopener noreferrer nofollow">`6ed10fc`</a>
+- **UI**: Some client_structure cleanups <a href="https://github.com/DGAlexandru/NoCloud/commit/37ca60914c85dcf192521a5cbc023bf4beeaf63b" target="_blank" rel="noopener noreferrer nofollow">`37ca609`</a>
+- **Vendor.Dreame**: Add additional model IDs for Mova P10 Pro Ultra <a href="https://github.com/DGAlexandru/NoCloud/commit/7e70d94e45ad5c30d80bcfe235e2f44d759ded81" target="_blank" rel="noopener noreferrer nofollow">`7e70d94`</a>
+- **Vendor.Dreame**: Disable postWriteDelay for Manual Movement Control Commands <a href="https://github.com/DGAlexandru/NoCloud/commit/9911a952af3fee7f888a7f04baefc4d21e3c7227" target="_blank" rel="noopener noreferrer nofollow">`9911a95`</a>
+- **UI**: Some map touch handling cleanup <a href="https://github.com/DGAlexandru/NoCloud/commit/62a4d47b6ff1f7a18032edfa9dbb822d36044d9a" target="_blank" rel="noopener noreferrer nofollow">`62a4d47`</a>
+- **WebServer**: Remove obsolete express-list-endpoints <a href="https://github.com/DGAlexandru/NoCloud/commit/08402bf2b4170fbab28a66fcbbf73f65c939aef4" target="_blank" rel="noopener noreferrer nofollow">`08402bf`</a>
+
+### Refactoring
+
+- **Core**: Migrate Map Entities to a separate location <a href="https://github.com/DGAlexandru/NoCloud/commit/f8bf9cdd9e4dc5ac6f1c52e650c6a450822a0edc" target="_blank" rel="noopener noreferrer nofollow">`f8bf9cd`</a>
+- **Vendor.Dreame**: Use the MIOT Helper everywhere <a href="https://github.com/DGAlexandru/NoCloud/commit/ce0e418b239701bb559877dfc2e8895b384b03a7" target="_blank" rel="noopener noreferrer nofollow">`ce0e418`</a>
+- **Vendor.Dreame**: Central MIOT Helper <a href="https://github.com/DGAlexandru/NoCloud/commit/ff4047c3ac42a4b68770c2593a325130fd5eca82" target="_blank" rel="noopener noreferrer nofollow">`ff4047c`</a>
+- **UI**: Code consolidation for SimpleToggle Capabilities on frontend - easier to maintain & add new ones <a href="https://github.com/DGAlexandru/NoCloud/commit/18a05b3ddb894e7768d6a178c22dcd6ea8c19ad5" target="_blank" rel="noopener noreferrer nofollow">`18a05b3`</a>
+
+### Chores
+
+- **Vendor.Viomi**: Clean up unnecessary optional chaining <a href="https://github.com/DGAlexandru/NoCloud/commit/601f2ad12c78d2b7a38acd1b015ddf74c8bf5068" target="_blank" rel="noopener noreferrer nofollow">`601f2ad`</a>
+- **ChangeLog**: Fixing OCD take 2 :) <a href="https://github.com/DGAlexandru/NoCloud/commit/a66cfb717b89d493627f7c8dbc0b02ad22b41f99" target="_blank" rel="noopener noreferrer nofollow">`a66cfb7`</a>
+- **ChangeLog**: Fixing ... When OCD kicks in and you mess with the standard :) <a href="https://github.com/DGAlexandru/NoCloud/commit/9fe4e9737279b24d0a6412f024f696e610a25f60" target="_blank" rel="noopener noreferrer nofollow">`9fe4e97`</a>
+- **Test**: Switch to native NodeJS test runner (from mocha) & bump some dependencies and node version <a href="https://github.com/DGAlexandru/NoCloud/commit/f985f16a59c6c2209433ce73f8ecf9daa785f8a6" target="_blank" rel="noopener noreferrer nofollow">`f985f16`</a>
+- **Build**: Migrate from "upload-release-asset" to softprops/action-gh-release <a href="https://github.com/DGAlexandru/NoCloud/commit/abccbb08ecd59b95af99b5032aa5accadcb6bf19" target="_blank" rel="noopener noreferrer nofollow">`abccbb0`</a>
+- **Build**: Bump all GitHub Actions to supported node versions <a href="https://github.com/DGAlexandru/NoCloud/commit/0dd77775257d09d4a449af4e7a9a996e0d2b11f4" target="_blank" rel="noopener noreferrer nofollow">`0dd7777`</a>
+- **BuildTools**: Generate ChangeLog with links that open in another tab / window. <a href="https://github.com/DGAlexandru/NoCloud/commit/ab1310f6f39ef783abfe2dd45c067da08ff571ce" target="_blank" rel="noopener noreferrer nofollow">`ab1310f`</a>
